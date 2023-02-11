@@ -6,6 +6,7 @@ specifiers:
   react: 18.2.0
   react-dom: 18.2.0
   react-icons: ^4.7.1
+  react-loading-skeleton: ^3.1.1
   sass: ^1.58.0
 
 dependencies:
@@ -14,6 +15,7 @@ dependencies:
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   react-icons: 4.7.1_react@18.2.0
+  react-loading-skeleton: 3.1.1_react@18.2.0
   sass: 1.58.0
 
 packages:
@@ -341,6 +343,14 @@ packages:
     resolution: {integrity: sha512-yHd3oKGMgm7zxo3EA7H2n7vxSoiGmHk5t6Ou4bXsfcgWyhfDKMpyKfhHR6Bjnn63c+YXBLBPUql9H4wPJM6sXw==}
     peerDependencies:
       react: '*'
+    dependencies:
+      react: 18.2.0
+    dev: false
+
+  /react-loading-skeleton/3.1.1_react@18.2.0:
+    resolution: {integrity: sha512-gQeNzzKXlevvquRDOhN5kas5VE7toTKrpmE9BpUdf0iip9c5ae0LcVbulh5ebO2CFl4RrYsyLuDtYGyrh1h1iA==}
+    peerDependencies:
+      react: '>=16.8.0'
     dependencies:
       react: 18.2.0
     dev: false

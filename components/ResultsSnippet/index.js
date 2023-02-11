@@ -8,7 +8,7 @@ const ResultsSnippet = ({ results }) => {
     const router = useRouter()
 
     return (
-        <div className={styles.resultsSnippet} onClick={router.push(formattedUrl)}>
+        <div className={styles.resultsSnippet} onClick={() => {window.location.href = formattedUrl}}>
             <div className={styles.head}>
                 {/* <img src={favicon} alt="favicon" className={styles.favicon} /> */}
                 <p className={styles.url}>{formattedUrl}</p>

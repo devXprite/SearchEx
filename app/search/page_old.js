@@ -4,7 +4,6 @@ import { useSearchParams } from "next/navigation";
 import { useState, useEffect } from "react";
 import ResultsSnippet from "@/components/ResultsSnippet";
 import styles from "./page.module.scss";
-import ResultSkeleton from "@/components/ResultSkeleton";
 
 const searchPage = () => {
 
@@ -13,18 +12,14 @@ const searchPage = () => {
 
     const [results, setResults] = useState([]);
     const [page, setPage] = useState(1);
-    const [loading, setLoading] = useState(true)
 
     useEffect(() => {
             fetch(`/api/search?q=${query}&page=${page}`)
                 .then(res => res.json())
                 .then(data => {
                     setResults(data);
-                    setLoading(false)
                 })
-    }, [query]);
-
-    useEffect(() =>{setResults([]), setLoading(true)},[query])
+    }, []);
 
     console.log(results)
 
@@ -33,20 +28,9 @@ const searchPage = () => {
             <div className={styles.searchPage}>
                 <div></div>
                 <div className={styles.results__container}>
-                   {
-                    (loading) ? (
-                        <>
-                        {Array.from(Array(10).keys()).map(() => <ResultSkeleton />) }
-                        </>
-                    ) : (
-                        <>
-                            {results.map(result => (
-                                <ResultsSnippet key={result.link} results={result} />
-                            ))}
-                        </>
-                    )
-                   }
-
+                    {results.map(result => (
+                        <ResultsSnippet key={result.link} results={result} />
+                    ))}
                 </div>
             </div>
         </>
