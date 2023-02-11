@@ -1,0 +1,25 @@
+// import ubuntu font
+
+.logo {
+  font-weight: lighter;
+  font-size: 5rem;
+  color: #fff;
+  text-decoration: none;
+  margin-top: 17vh;
+  background: linear-gradient(91.12deg, #7b0afd 0.56%, #00FFF0 103.08%);
+  display: inline-block;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.tagline {
+  font-weight: lighter;
+  font-size: 1.7rem;
+  color: #fff;
+  text-decoration: none;
+  margin-top: 0rem;
+  letter-spacing: 4px;
+  margin-bottom: 6rem;
+}

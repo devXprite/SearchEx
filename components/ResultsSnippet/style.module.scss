@@ -1,0 +1,31 @@
+.resultsSnippet{
+    text-decoration: none;
+    background: transparent;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease-in-out;
+    color: rgb(218, 218, 218);
+    text-align: left;
+    padding: 0.5rem 1rem;
+    margin: 1rem 0;
+
+    &:hover{
+        background: #2b2b2b;
+    }
+
+    .head{
+        font-size: 0.8rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .body{
+        .title{
+            color: rgb(77, 163, 255);
+            font-weight: normal;
+            font-size: 1.3rem;
+        }
+        .snippet{
+            font-size: 0.9rem;
+            color: rgb(182, 182, 182);
+        }
+    }
+}
