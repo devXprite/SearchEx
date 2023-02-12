@@ -2,12 +2,12 @@
 
 import { useSearchParams } from "next/navigation";
 import { useState, useEffect } from "react";
-import ResultsSnippet from "@/components/ResultsSnippet";
+import ResultsSnippet from "@/components/pages/all/Snippet";
 import styles from "./page.module.scss";
-import ResultSkeleton from "@/components/ResultSkeleton";
-import Card from "@/components/Card";
+import ResultSkeleton from "@/components/pages/all/SnippetSkeleton";
+import ResultCard from "@/components/pages/all/Card";
 
-const searchPage = async () => {
+const searchPage = () => {
 
     const searchParams = useSearchParams();
     const query = searchParams.get("q");
@@ -32,12 +32,11 @@ const searchPage = async () => {
     return (
         <>
             <div className={styles.searchPage}>
-                <div></div>
                 <div className={styles.results__container}>
                    {
                     (loading) ? (
                         <>
-                        {Array.from(Array(10).keys()).map((i) => <ResultSkeleton key={i} />) }
+                            {Array.from(Array(10).keys()).map((i) => <ResultSkeleton key={i} />) }
                         </>
                     ) : (
                         <>
@@ -49,9 +48,7 @@ const searchPage = async () => {
                    }
 
                 </div>
-                <div>
-                    {/* <Card /> */}
-                </div>
+                    <ResultCard />
             </div>
         </>
     )
