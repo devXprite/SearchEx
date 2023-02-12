@@ -6,10 +6,12 @@
     max-width: 25rem;
     margin-left: 7%;
     text-align: left;
+    box-shadow: #000 2px 2px 4px;
 
     img {
         width: 100%;
         max-height: 15rem;
+        border-radius: 0.5rem;
     }
 
     .title {
