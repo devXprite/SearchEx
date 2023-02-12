@@ -8,7 +8,7 @@ import Link from 'next/link';
 
 import { BsSearch, BsImage, BsNewspaper } from 'react-icons/bs';
 import { BsFillCameraVideoFill } from 'react-icons/bs';
-
+import { BsBook, BsMap } from 'react-icons/bs';
 
 export default function SearchLayout({ children }) {
     const router = useRouter();
@@ -40,18 +40,24 @@ export default function SearchLayout({ children }) {
             pathRegex: /^\/search\/news/
         },
         {
-            title: 'Shopping',
-            url: '/search/news?q=',
-            icon: <BsNewspaper />,
-            pathRegex: /^\/search\/news/
-        }
+            title: 'Maps',
+            url: '/search/maps?q=',
+            icon: <BsMap />,
+            pathRegex: /^\/search\/maps/
+        },
+        {
+            title: 'Books',
+            url: '/search/books?q=',
+            icon: <BsBook />,
+            pathRegex: /^\/search\/books/
+        },
     ]
 
     return (
         <div className={styles.search__layout}>
         <div className={styles.header}>
             <div className={styles.container__logo}>
-                <img src="/images/logo.svg" alt="logo" className={styles.logo} onClick={() => router.push('/')} />
+                {/* <img src="/images/logo.svg" alt="logo" className={styles.logo} onClick={() => router.push('/')} /> */}
             </div>
             <div className={styles.container__search}>
                 <div className={styles.search}>
@@ -60,7 +66,7 @@ export default function SearchLayout({ children }) {
                 <div className={styles.menu}>
                     {pages.map(page => (
                         <Link href={page.url + query} key={page.title} className={page.pathRegex.test(usePathname()) ? styles.active : ""}>
-                            {page.icon} {page.title}
+                            {page.icon}&nbsp;{page.title}
                         </Link>
                     ))}
                 </div>

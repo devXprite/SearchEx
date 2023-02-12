@@ -46,7 +46,6 @@ const searchPage = () => {
                         </>
                     )
                    }
-
                 </div>
                     <ResultCard />
             </div>

@@ -11,17 +11,22 @@ const ResultCard = () => {
     const q = searchParams.get("q");
 
     const [cardData, setCardData] = useState(null);
+    const [error, setError] = useState(false);
 
     useEffect(() => {
         const fetchCardData = async () => {
             const response = await fetch(`/api/card?q=${q}`)
-                .then((response) => response.json())
+                .then((response) => response.json()).catch(() => setError(true) );
 
             setCardData(response);
         }
 
         fetchCardData();
     }, [q]);
+
+    if (error) {
+        return ;
+    }
 
     return (
         <div>

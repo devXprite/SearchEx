@@ -1,0 +1,46 @@
+.card {
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    text-align: left;
+
+    &:hover {
+        transform: scale(1.05);
+        .card__image img {
+            box-shadow: rgba(0, 0, 0, 0.5) 2px 4px 6px;
+        } 
+    }
+
+    .card__image {
+        img {
+            width: 100%;
+            border-radius: 0.5rem;
+            box-shadow: rgba(0, 0, 0, 0.25) 2px 4px 4px;
+            border: 1px solid #444;
+        }
+    }
+
+    &__content {
+        margin-top: 0.5rem;
+
+        .title {
+            font-size: 1rem;
+            font-weight: normal;
+            margin-bottom: 0.3rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+        }
+
+        .snippet {
+            font-size: 0.75rem;
+            color: rgb(170, 170, 170);
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+        }
+    }
+}

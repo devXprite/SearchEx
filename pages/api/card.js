@@ -18,33 +18,11 @@ export default async (req, res) => {
         return;
     }
 
-
-    // var myHeaders = new Headers();
-    // myHeaders.append("Content-Type", "application/json");
-    // myHeaders.append("Authorization", "Bearer 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");
-
-    // var raw = JSON.stringify({
-    //     "model": "text-davinci-003",
-    //     "prompt": "Write a Intresting fact for this query:\n Rahul gandhi \n\n",
-    //     "temperature": 0.7,
-    //     "max_tokens": 256,
-    //     "top_p": 1,
-    //     "frequency_penalty": 0,
-    //     "presence_penalty": 0
-    //   });
-      
-    //   var requestOptions = {
-    //     method: 'POST',
-    //     headers: myHeaders,
-    //     body: raw,
-    //     redirect: 'follow'
-    //   };
-
     const openAIResult = await fetch("https://api.openai.com/v1/completions", { 
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': 'Bearer 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'
+            'Authorization': 'Bearer sk-Agn5wL1S211E4M6R7hioT3BlbkFJ8O24MK64UdTs99OuigYux'
         },
         body: JSON.stringify({
             "model": "text-davinci-003",
