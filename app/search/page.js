@@ -5,8 +5,9 @@ import { useState, useEffect } from "react";
 import ResultsSnippet from "@/components/ResultsSnippet";
 import styles from "./page.module.scss";
 import ResultSkeleton from "@/components/ResultSkeleton";
+import Card from "@/components/Card";
 
-const searchPage = () => {
+const searchPage = async () => {
 
     const searchParams = useSearchParams();
     const query = searchParams.get("q");
@@ -47,6 +48,9 @@ const searchPage = () => {
                     )
                    }
 
+                </div>
+                <div>
+                    {/* <Card /> */}
                 </div>
             </div>
         </>
