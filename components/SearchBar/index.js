@@ -20,7 +20,13 @@ const SearchBar = (props) => {
     const handleSearch = (e) => {
         e.preventDefault();
         console.log("searching");
-        router.push(`/search?q=${search}`);
+
+        // if path is / then push to /search else just ?q= to the current path
+        if (pathname === "/") {
+            router.push(`/search?q=${search}`);
+        } else {
+            router.push(`${pathname}?q=${search}`);
+        }
     }
 
     return (

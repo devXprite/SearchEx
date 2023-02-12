@@ -1,31 +1,57 @@
-.resultsSnippet{
+.resultsSnippet {
     text-decoration: none;
     background: transparent;
     border-radius: 0.5rem;
     transition: all 0.3s ease-in-out;
     color: rgb(218, 218, 218);
     text-align: left;
-    padding: 0.5rem 1rem;
+    padding: 1rem;
     margin: 1rem 0;
+    cursor: pointer;
 
-    &:hover{
+    &:hover {
         background: #2b2b2b;
+        box-shadow: #00000040 2px 4px 8px;
+        transform: scale(1.02);
     }
 
-    .head{
+    .head {
         font-size: 0.8rem;
         margin-bottom: 0.5rem;
-    }
+        display: flex;
+        flex-direction: row;
+        align-items: center;
 
-    .body{
-        .title{
+        .favicon {
+            width: 1rem;
+            margin-right: 0.5rem;
+            border-radius: 50%;
+        }
+    }
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .body {
+        .title {
             color: rgb(77, 163, 255);
             font-weight: normal;
             font-size: 1.3rem;
+            margin-bottom: 0.5rem;
         }
-        .snippet{
+
+        .snippet {
             font-size: 0.9rem;
             color: rgb(182, 182, 182);
         }
+    }
+
+    .cse {
+        height: 6rem;
+        border-radius: 1rem;
+        margin-left: 2rem;
     }
 }

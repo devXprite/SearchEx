@@ -7,6 +7,7 @@ import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 
 import { BsSearch, BsImage, BsNewspaper } from 'react-icons/bs';
+import { BsFillCameraVideoFill } from 'react-icons/bs';
 
 
 export default function SearchLayout({ children }) {
@@ -27,13 +28,13 @@ export default function SearchLayout({ children }) {
             pathRegex: /^\/search\/images/
         },
         {
-            title: 'News',
-            url: '/search/news?q=',
-            icon: <BsNewspaper />,
-            pathRegex: /^\/search\/news/
+            title: 'Videos',
+            url: '/search/videos?q=',
+            icon: <BsFillCameraVideoFill />,
+            pathRegex: /^\/search\/videos/
         },
         {
-            title: 'Maps',
+            title: 'News',
             url: '/search/news?q=',
             icon: <BsNewspaper />,
             pathRegex: /^\/search\/news/

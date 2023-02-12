@@ -9,7 +9,7 @@ export default async (req, res) => {
     const responseJson = await response.json();
     const responseItems = responseJson.items;
     
-    const items = responseItems.map((item) => ({
+    const items = responseItems.map((item,i) => ({
         title: item.title,
         htmlTitle: item.htmlTitle,
         link: item.link,
@@ -18,8 +18,10 @@ export default async (req, res) => {
         htmlFormattedUrl: item.htmlFormattedUrl,
         snippet: item.snippet,
         htmlSnippet: item.htmlSnippet,
-        favicon: item.pagemap?.cse_image?.[0]?.src
+        cse: (i == 0 && item.pagemap?.cse_thumbnail?.[0]?.src || null),
+        favicon: `https://www.google.com/s2/favicons?domain=${item.link}&sz=${256}`
     }));
+
 
     
     res.status(200).json(items);

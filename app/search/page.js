@@ -36,7 +36,7 @@ const searchPage = () => {
                    {
                     (loading) ? (
                         <>
-                        {Array.from(Array(10).keys()).map(() => <ResultSkeleton />) }
+                        {Array.from(Array(10).keys()).map((i) => <ResultSkeleton key={i} />) }
                         </>
                     ) : (
                         <>
