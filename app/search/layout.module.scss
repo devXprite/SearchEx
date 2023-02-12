@@ -6,6 +6,12 @@
     grid-gap: 1rem;
     background-color: #2c2c2c;
 
+    @media screen and (max-width: 800px) {
+        grid-template-columns: 1fr;
+        grid-gap: 0.5rem;
+        padding: 0.5rem;
+    }
+
     .menu {
         display: flex;
         flex-direction: row;
@@ -28,12 +34,24 @@
         }
     }
 
-    .logo {
-        width: 5rem;
-        height: 5rem;
+    .container__logo {
+        .logo {
+            width: 5rem;
+            height: 5rem;
+        }
+
+        @media screen and (max-width: 800px) {
+            display: none;
+        }
+    }
+
+    .container__account {
+        @media screen and (max-width: 800px) {
+            display: none;
+        }
     }
 }
 
-.container__content{
+.container__content {
     padding-top: 1rem;
 }

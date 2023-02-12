@@ -6,4 +6,9 @@
     grid-gap: 3rem 1.5rem;
     align-items: center;
     text-align: left;
+
+    @media (max-width: 800px) {
+        grid-template-columns: 1fr 1fr;
+        margin: 0 4%;
+    }
 }

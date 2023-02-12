@@ -17,7 +17,7 @@ const searchPage = () => {
     const [loading, setLoading] = useState(true)
 
     useEffect(() => {
-            fetch(`/api/search?q=${query}&page=${page}`)
+            fetch(`/api/search/?q=${query}&page=${page}`)
                 .then(res => res.json())
                 .then(data => {
                     setResults(data);

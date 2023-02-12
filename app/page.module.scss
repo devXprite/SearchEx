@@ -12,6 +12,12 @@
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
+
+  // add media query for mobile
+  @media (max-width: 800px) {
+    font-size: 3.3rem;
+    margin-top: 25vh;
+  }
 }
 
 .tagline {
@@ -22,4 +28,11 @@
   margin-top: 0rem;
   letter-spacing: 4px;
   margin-bottom: 6rem;
+  padding: 0 0.75rem;
+
+  @media (max-width: 800px) {
+    font-size: 1rem;
+    margin-bottom: 4rem;
+    letter-spacing: 2px;
+  }
 }

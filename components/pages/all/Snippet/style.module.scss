@@ -9,6 +9,11 @@
     margin: 1rem 0;
     cursor: pointer;
 
+    @media (max-width: 800px) {
+        margin: 0.75rem 0;
+        padding: 0.5rem;
+    }
+
     &:hover {
         background: #2b2b2b;
         box-shadow: #00000040 2px 4px 8px;
@@ -27,6 +32,16 @@
             margin-right: 0.5rem;
             border-radius: 50%;
         }
+
+        .url {
+            width: 100%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+        }
     }
 }
 
@@ -41,6 +56,10 @@
             font-weight: normal;
             font-size: 1.3rem;
             margin-bottom: 0.5rem;
+
+            @media (max-width: 800px) {
+                font-size: 1.15rem;
+            }
         }
 
         .snippet {
@@ -53,5 +72,9 @@
         height: 6rem;
         border-radius: 1rem;
         margin-left: 2rem;
+
+        @media (max-width: 800px) {
+            display: none;
+        }
     }
 }

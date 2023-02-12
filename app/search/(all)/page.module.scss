@@ -3,7 +3,12 @@
     grid-template-columns: 2fr 1fr;
     margin: 0rem 10%;
 
+    @media (max-width: 800px) {
+        grid-template-columns: 1fr;
+        margin: 0rem 4%;
+    }
+
     .results__container{
-        
+        grid-row: 2;
     }
 }

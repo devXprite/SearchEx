@@ -11,7 +11,7 @@ const ResultsSnippet = ({ results }) => {
         <div className={styles.resultsSnippet} onClick={() => { window.location.href = formattedUrl }}>
             <div className={styles.head}>
                 <img src={favicon} alt="favicon" className={styles.favicon} />
-                <p className={styles.url}>{formattedUrl}</p>
+                <p className={styles.url}>{displayLink}</p>
             </div>
             <div className={styles.content}>
                 <div className={styles.body}>

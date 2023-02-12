@@ -9,7 +9,12 @@
     justify-content: space-evenly;
     margin: 0 auto;
 
-    &:focus-within{
+    @media (max-width: 800px) {
+        max-width: 90%;
+        height: 2.5rem;
+    }
+
+    &:focus-within {
         border-color: rgb(0, 153, 255);
     }
 
@@ -22,12 +27,16 @@
         color: #fff;
         padding-left: 1rem;
 
+        @media (max-width: 800px) {
+            font-size: 1.1rem;
+        }
+
         &:focus {
             outline: none;
         }
     }
 
-    button{
+    button {
         border: none;
         border-radius: 5rem;
         display: flex;
@@ -35,10 +44,15 @@
         align-items: center;
         background: transparent;
 
-        svg{
+        svg {
             width: 3.5rem;
             height: 1.5rem;
             fill: #cecece;
+
+            @media (max-width: 800px) {
+                width: 3rem;
+                height: 1.25rem;
+            }
         }
     }
 }

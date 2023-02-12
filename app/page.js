@@ -6,7 +6,7 @@ import styles from './page.module.scss'
 export default function Home() {
   return (
     <>
-      <h1 className={styles.logo}>Brainy Search</h1>
+      <h1 className={styles.logo}>BrainWave</h1>
       <p className={styles.tagline}>Empowering your search with AI</p>
       <SearchBar />
     </>

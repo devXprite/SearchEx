@@ -9,6 +9,7 @@ import Link from 'next/link';
 import { BsSearch, BsImage, BsNewspaper } from 'react-icons/bs';
 import { BsFillCameraVideoFill } from 'react-icons/bs';
 import { BsBook, BsMap } from 'react-icons/bs';
+import { Suspense } from 'react';
 
 export default function SearchLayout({ children }) {
     const router = useRouter();
@@ -54,30 +55,32 @@ export default function SearchLayout({ children }) {
     ]
 
     return (
-        <div className={styles.search__layout}>
-        <div className={styles.header}>
-            <div className={styles.container__logo}>
-                {/* <img src="/images/logo.svg" alt="logo" className={styles.logo} onClick={() => router.push('/')} /> */}
-            </div>
-            <div className={styles.container__search}>
-                <div className={styles.search}>
-                    <SearchBar size="large" />
+        <Suspense>
+            <div className={styles.search__layout}>
+                <div className={styles.header}>
+                    <div className={styles.container__logo}>
+                        {/* <img src="/images/logo.svg" alt="logo" className={styles.logo} onClick={() => router.push('/')} /> */}
+                    </div>
+                    <div className={styles.container__search}>
+                        <div className={styles.search}>
+                            <SearchBar size="large" />
+                        </div>
+                        <div className={styles.menu}>
+                            {pages.map(page => (
+                                <Link href={page.url + query} key={page.title} className={page.pathRegex.test(usePathname()) ? styles.active : ""}>
+                                    {page.icon}&nbsp;{page.title}
+                                </Link>
+                            ))}
+                        </div>
+                    </div>
+                    <div className={styles.container__account}>
+                        <BsPerson className={styles.account} />
+                    </div>
                 </div>
-                <div className={styles.menu}>
-                    {pages.map(page => (
-                        <Link href={page.url + query} key={page.title} className={page.pathRegex.test(usePathname()) ? styles.active : ""}>
-                            {page.icon}&nbsp;{page.title}
-                        </Link>
-                    ))}
+                <div className={styles.container__content}>
+                    {children}
                 </div>
             </div>
-            <div className={styles.container__account}>
-                <BsPerson className={styles.account} />
-            </div>
-        </div>
-        <div className={styles.container__content}>
-            {children}
-        </div>
-    </div>
+        </Suspense>
     )
 }
