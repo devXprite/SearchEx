@@ -4,6 +4,7 @@ import { useSearchParams } from "next/navigation";
 import { useState, useEffect } from "react";
 import styles from "./page.module.scss";
 import Card from "@/components/pages/images/Card";
+import CardSkeleton from "@/components/pages/images/CardSkeleton";
 
 const Page = (props) => {
 
@@ -15,7 +16,7 @@ const Page = (props) => {
     const [loading, setLoading] = useState(true)
 
     useEffect(() => {
-        fetch(`/api/images?q=${query}&page=${page}`)
+        fetch(`/api/search/images?q=${query}&page=${page}`)
             .then(res => res.json())
             .then(data => {
                 setResults(data);
@@ -30,7 +31,7 @@ const Page = (props) => {
             <div className={styles.searchPage}>
                 <div className={styles.results__container}>
                     {(loading) ? (
-                        <h2>Page is Loading...</h2>
+                       <>{Array.from(Array(15).keys()).map((i) => <CardSkeleton key={i} /> ) }</>
                     ) : (
                         <>
                             {results.map(result => (

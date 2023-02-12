@@ -6,7 +6,7 @@ const CardSkeleton = () => {
     return (
         <div className={styles.card}>
             <div className={styles.card__body}>
-                <SkeletonTheme baseColor="#444" highlightColor="#888">
+                <SkeletonTheme baseColor="#343434" highlightColor="#565656">
                     <Skeleton height={200} />
                     <Skeleton height={22} width={'50%'} style={{ margin: '10px 0 5px 0' }} />
                     <Skeleton height={14} count={8} />

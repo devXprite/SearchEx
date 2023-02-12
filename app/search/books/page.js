@@ -1,7 +1,7 @@
 const Page = (props) => {
     return (
         <>
-            <h1>This is Video Page</h1>
+            <h1>This is Book Page</h1>
         </>
     )
 }
