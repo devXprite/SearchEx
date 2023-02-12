@@ -31,7 +31,7 @@ const SearchBar = (props) => {
 
     return (
         <form className={styles.searchBar + " " + props.classNames} onSubmit={handleSearch}>
-            <input placeholder="Enter A Song, Album, or Artist" value={search } onChange={(e) => setSearch(e.target.value)} />
+            <input placeholder="Write here to search..." value={search } onChange={(e) => setSearch(e.target.value)} />
             <button type="submit" ><FaSearch /></button>
         </form>
     );
