@@ -1,4 +1,4 @@
-// import ubuntu font
+@import '@/app/variables';
 
 .accountBtn_container{
   position: absolute;
@@ -12,7 +12,7 @@
   color: #fff;
   text-decoration: none;
   margin-top: 17vh;
-  background: linear-gradient(91.12deg, #7b0afd 0.56%, #00FFF0 103.08%);
+  background: $logo-gradient;
   display: inline-block;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -20,7 +20,7 @@
   text-fill-color: transparent;
 
   // add media query for mobile
-  @media (max-width: 800px) {
+  @include mobile {
     font-size: 3.5rem;
     margin-top: 25vh;
   }
@@ -29,14 +29,14 @@
 .tagline {
   font-weight: lighter;
   font-size: 1.7rem;
-  color: #fff;
+  color: $color;
   text-decoration: none;
   margin-top: 0rem;
   letter-spacing: 4px;
   margin-bottom: 6rem;
   padding: 0 0.75rem;
 
-  @media (max-width: 800px) {
+  @include mobile {
     font-size: 1rem;
     margin-bottom: 6rem;
     letter-spacing: 2px;

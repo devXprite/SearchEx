@@ -4,8 +4,6 @@ import VideoCard from "@/components/pages/videos/VideoCard";
 import { useSearchParams } from "next/navigation";
 import { useState, useEffect } from "react";
 import styles from "./page.module.scss";
-// import Card from "@/components/pages/images/Card";
-// import CardSkeleton from "@/components/pages/images/CardSkeleton";
 
 const Page = (props) => {
 

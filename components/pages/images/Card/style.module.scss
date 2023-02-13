@@ -1,3 +1,5 @@
+@import '@/app/variables';
+
 .card {
     cursor: pointer;
     transition: all 0.3s ease-in-out;
@@ -6,7 +8,7 @@
     &:hover {
         transform: scale(1.05);
         .card__image img {
-            box-shadow: rgba(0, 0, 0, 0.5) 2px 4px 6px;
+            box-shadow: $box-shadow;
         } 
     }
 
@@ -14,8 +16,8 @@
         img {
             width: 100%;
             border-radius: 0.5rem;
-            box-shadow: rgba(0, 0, 0, 0.25) 2px 4px 4px;
-            border: 1px solid #444;
+            box-shadow: $box-shadow;
+            border: 1px solid $border-color;
         }
     }
 
@@ -35,7 +37,7 @@
 
         .snippet {
             font-size: 0.75rem;
-            color: rgb(170, 170, 170);
+            color: $secondary-color;
             overflow: hidden;
             text-overflow: ellipsis;
             display: -webkit-box;

@@ -1,3 +1,4 @@
+@import '@/app/variables';
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
 
 *,
@@ -9,8 +10,8 @@
 }
 
 body {
-    background-color: #1b1b1b;
-    color: #fff;
+    background-color: $background;
+    color: $color;
     text-align: center;
     font-family: 'Ubuntu', sans-serif;
 }

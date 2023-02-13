@@ -1,23 +1,25 @@
+@import '@/app/variables';
+
 .searchBar {
     width: 100%;
     max-width: 47rem;
     height: 3rem;
-    border: 2px solid #949494;
+    border: 2px solid $border-color;
     border-radius: 3rem;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     margin: 0 auto;
-    box-shadow: rgb(0 0 0 / 35%) 2px 2px 6px;
+    box-shadow: $box-shadow;
     transition: all 0.3s;
-    background: #1f1f1f;
+    background: $background;
 
     &:hover {
         transform: scale(1.02);
-        box-shadow: rgb(0 0 0 / 60%) 2px 2px 6px;
+        box-shadow: $box-shadow-hover;
     }
 
-    @media (max-width: 800px) {
+    @include mobile {
         max-width: 95%;
         height: 2.5rem;
     }
@@ -34,10 +36,10 @@
         background: transparent;
         width: 100%;
         font-size: 1.3rem;
-        color: #fff;
+        color: $color;
         padding-left: 1rem;
 
-        @media (max-width: 800px) {
+        @include mobile {
             font-size: 1.1rem;
         }
 
@@ -57,9 +59,9 @@
         svg {
             width: 3.5rem;
             height: 1.5rem;
-            fill: #cecece;
+            fill: $tertiary-color;
 
-            @media (max-width: 800px) {
+            @include mobile {
                 width: 3rem;
                 height: 1.25rem;
             }

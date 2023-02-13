@@ -43,7 +43,7 @@ export default function SearchLayout({ children }) {
         },
         {
             title: 'Maps',
-            url: '/search/maps?q=',
+            url: 'https://www.google.com/maps/search/',
             icon: <BsMap />,
             pathRegex: /^\/search\/maps/
         },
@@ -60,7 +60,6 @@ export default function SearchLayout({ children }) {
             <div className={styles.search__layout}>
                 <div className={styles.header}>
                     <div className={styles.container__logo}>
-                        {/* <img src="/images/logo.svg" alt="logo" className={styles.logo} onClick={() => router.push('/')} /> */}
                     <Link href={'/'}><span className={styles.logo}>Apubmed</span> </Link>
                     </div>
                     <div className={styles.container__search}>
@@ -71,7 +70,6 @@ export default function SearchLayout({ children }) {
                             {pages.map(page => (
                                 <Link href={page.url + query} key={page.title} className={page.pathRegex.test(usePathname()) ? styles.active : ""}>
                                     <span>{page.icon}</span><span>{page.title}</span>
-                                    {/* {page.icon}&nbsp;{page.title} */}
                                 </Link>
                             ))}
                         </div>

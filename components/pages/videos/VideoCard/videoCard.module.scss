@@ -1,3 +1,5 @@
+@import '@/app/variables';
+
 .videoCard {
     display: grid;
     grid-template-columns: 1fr 2.5fr;
@@ -9,7 +11,7 @@
     transition: all 0.3s;
     cursor: pointer;
 
-    @media (max-width: 800px) {
+    @include mobile {
         grid-template-columns: 1fr;
         gap: 0rem;
 
@@ -25,8 +27,8 @@
     }
 
     &:hover {
-        box-shadow: rgb(0 0 0 / 60%) 2px 2px 6px;
-        background: #2c2c2c;
+        box-shadow: $box-shadow;
+        background: $secondary-background;
         transform: scale(1.03);
 
         .thumbnail {
