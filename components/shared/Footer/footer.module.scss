@@ -1,0 +1,50 @@
+@import "@/app/variables";
+
+.footer {
+    box-shadow: rgb(0 0 0 / 40%) 0px -2px 6px;
+    background: $primary-background;
+    border-top: 1px solid rgba($border-color, 0.6);
+    padding: 1rem 2rem;
+    margin-top: 2rem;
+    color: $secondary-color;
+
+    @include mobile {
+        padding: 1rem 0.5rem;
+    }
+
+    &__text {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @include mobile {
+            flex-direction: column-reverse;
+            gap: 1rem;
+        }
+
+        .logo {
+            background: linear-gradient(110deg, #7b0afd 0.56%, #00fff0 103%);
+            display: inline-block;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+            transition: all 0.3s;
+        }
+
+        .theme {
+            padding: 0.3rem 0.8rem;
+            border: 1px solid $border-color;
+            border-radius: 0.3rem;
+            box-shadow: $box-shadow;
+            background: $background;
+            cursor: pointer;
+            transition: all 0.3s;
+
+            &:hover {
+                transform: scale(1.03);
+                border-color: $link-color;
+            }
+        }
+    }
+}

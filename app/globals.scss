@@ -14,4 +14,12 @@ body {
     color: $color;
     text-align: center;
     font-family: 'Ubuntu', sans-serif;
+    min-height: 100vh;
+    // display: flex;
+    // flex-direction: column;
+
+    main{
+        // flex: 1;
+        min-height: 100vh;
+    }
 }

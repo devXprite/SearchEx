@@ -1,3 +1,4 @@
+import Footer from '@/components/shared/Footer'
 import './globals.scss'
 
 export default function RootLayout({ children }) {
@@ -9,7 +10,10 @@ export default function RootLayout({ children }) {
       */}
       <head />
       <body>
-        {children}
+        <main>
+          {children}
+        </main>
+        <Footer />
       </body>
     </html>
   )
