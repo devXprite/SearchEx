@@ -60,6 +60,7 @@ export default function SearchLayout({ children }) {
                 <div className={styles.header}>
                     <div className={styles.container__logo}>
                         {/* <img src="/images/logo.svg" alt="logo" className={styles.logo} onClick={() => router.push('/')} /> */}
+                        <span className={styles.logo}>Apubmed</span>
                     </div>
                     <div className={styles.container__search}>
                         <div className={styles.search}>
@@ -68,7 +69,8 @@ export default function SearchLayout({ children }) {
                         <div className={styles.menu}>
                             {pages.map(page => (
                                 <Link href={page.url + query} key={page.title} className={page.pathRegex.test(usePathname()) ? styles.active : ""}>
-                                    {page.icon}&nbsp;{page.title}
+                                    <span>{page.icon}</span><span>{page.title}</span>
+                                    {/* {page.icon}&nbsp;{page.title} */}
                                 </Link>
                             ))}
                         </div>
