@@ -1,3 +1,3 @@
 export default function Loading(params) {
-    return( <p> </p> )
+    return( <p>Page is Loading... </p> )
 }

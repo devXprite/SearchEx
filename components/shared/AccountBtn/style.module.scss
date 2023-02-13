@@ -1,0 +1,37 @@
+.accountBtn {
+    // padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    // background: linear-gradient(45deg, #0062ff, #00ff8a);
+    // color: #000;
+    background: #1f1f1f;
+    color: #fff;
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.6) 2px 2px 4px;
+    border: #696969 solid 1px;
+    transition: all 0.3s;
+    cursor: pointer;
+    float: right;
+
+    &:hover {
+        transform: scale(1.075);
+        box-shadow: rgba(0, 0, 0, 0.8) 4px 4px 6px;
+    }
+
+    img,
+    svg {
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+    }
+
+    svg {
+        padding: 6px;
+    }
+
+    .title {
+        padding: 0 1rem;
+        font-size: 1.1rem;
+    }
+}

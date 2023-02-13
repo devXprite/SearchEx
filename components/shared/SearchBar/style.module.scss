@@ -8,6 +8,14 @@
     flex-direction: row;
     justify-content: space-evenly;
     margin: 0 auto;
+    box-shadow: rgb(0 0 0 / 35%) 2px 2px 6px;
+    transition: all 0.3s;
+    background: #1f1f1f;
+
+    &:hover {
+        transform: scale(1.02);
+        box-shadow: rgb(0 0 0 / 60%) 2px 2px 6px;
+    }
 
     @media (max-width: 800px) {
         max-width: 95%;
@@ -15,7 +23,9 @@
     }
 
     &:focus-within {
+        box-shadow: rgb(0 0 0 / 80%) 2px 2px 6px;
         border-color: rgb(0, 153, 255);
+        transform: scale(1.02);
     }
 
     input {

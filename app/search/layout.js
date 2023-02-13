@@ -1,7 +1,7 @@
 "use client";
 
 import styles from './layout.module.scss'
-import SearchBar from "@/components/SearchBar";
+import SearchBar from "@/components/shared/SearchBar";
 import { BsPerson } from 'react-icons/bs'
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
@@ -10,6 +10,7 @@ import { BsSearch, BsImage, BsNewspaper } from 'react-icons/bs';
 import { BsFillCameraVideoFill } from 'react-icons/bs';
 import { BsBook, BsMap } from 'react-icons/bs';
 import { Suspense } from 'react';
+import AccountBtn from '@/components/shared/AccountBtn';
 
 export default function SearchLayout({ children }) {
     const router = useRouter();
@@ -60,7 +61,7 @@ export default function SearchLayout({ children }) {
                 <div className={styles.header}>
                     <div className={styles.container__logo}>
                         {/* <img src="/images/logo.svg" alt="logo" className={styles.logo} onClick={() => router.push('/')} /> */}
-                        <span className={styles.logo}>Apubmed</span>
+                    <Link href={'/'}><span className={styles.logo}>Apubmed</span> </Link>
                     </div>
                     <div className={styles.container__search}>
                         <div className={styles.search}>
@@ -76,7 +77,8 @@ export default function SearchLayout({ children }) {
                         </div>
                     </div>
                     <div className={styles.container__account}>
-                        <BsPerson className={styles.account} />
+                        {/* <BsPerson className={styles.account} /> */}
+                        <AccountBtn />
                     </div>
                 </div>
                 <div className={styles.container__content}>
