@@ -24,16 +24,16 @@ export default function SearchLayout({ children }) {
             pathRegex: /^\/search$/
         },
         {
-            title: 'Images',
-            url: '/search/images?q=',
-            icon: <BsImage />,
-            pathRegex: /^\/search\/images/
-        },
-        {
             title: 'Videos',
             url: '/search/videos?q=',
             icon: <BsFillCameraVideoFill />,
             pathRegex: /^\/search\/videos/
+        },
+        {
+            title: 'Images',
+            url: '/search/images?q=',
+            icon: <BsImage />,
+            pathRegex: /^\/search\/images/
         },
         {
             title: 'News',

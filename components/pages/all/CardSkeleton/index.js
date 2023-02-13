@@ -4,7 +4,7 @@ import styles from '../Card/card.module.scss'
 
 const CardSkeleton = () => {
     return (
-        <div className={styles.card}>
+        <div className={styles.card + " " + styles.skeleton}>
             <div className={styles.card__body}>
                 <SkeletonTheme baseColor="#343434" highlightColor="#565656">
                     <Skeleton height={200} />

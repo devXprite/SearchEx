@@ -3,6 +3,9 @@ export default async (req, res) => {
     const page = Number(req.query.page)
 
     const start = (page - 1) * 10 + 1;
+
+  console.log(`Calling Search All API: q=${q}, start=${start}`);
+
     // setTimeout(async () => {
     const response = await fetch(`https://www.googleapis.com/customsearch/v1?key=${process.env.GOOGLE_API_KEY}&cx=${process.env.GOOGLE_API_CX}&q=${q}&start=${start}`);
 

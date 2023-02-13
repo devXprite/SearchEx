@@ -1,0 +1,94 @@
+.videoCard {
+    display: grid;
+    grid-template-columns: 1fr 2.5fr;
+    text-align: left;
+    margin-bottom: 1rem;
+    gap: 1rem;
+    border-radius: 0.5rem;
+    padding: 0.25rem;
+    transition: all 0.3s;
+    cursor: pointer;
+
+    @media (max-width: 800px) {
+        grid-template-columns: 1fr;
+        gap: 0rem;
+
+        .content {
+            .publishedAt, .channel {
+                display: none;
+            }
+
+            .description {
+                font-size: 0.75rem;
+            }
+        }
+    }
+
+    &:hover {
+        box-shadow: rgb(0 0 0 / 60%) 2px 2px 6px;
+        background: #2c2c2c;
+        transform: scale(1.03);
+
+        .thumbnail {
+            box-shadow: none;
+        }
+    }
+
+    .thumbnail {
+        border-radius: 0.4rem;
+        box-shadow: 2px 2px 0.2rem rgba(0, 0, 0, 0.6);
+        border: 1px solid #b3b3b3;
+        max-width: 100%;
+
+        @media (max-width: 800px) {
+            width: 100%;
+            border: none;
+        }
+    }
+
+    .content {
+        padding: 0.75rem 0.5rem;
+
+        @media (max-width: 800px) {
+            padding: 0.5rem 0.25rem;
+        }
+
+        .title {
+            color: #269aff;
+            font-size: 1.4rem;
+            font-weight: normal;
+
+            @media (max-width: 800px) {
+                font-size: 1.2rem;
+                border: none;
+            }
+        }
+
+        .publishedAt {
+            margin-top: 0.25rem;
+            color: #d8d8d8;
+            font-size: 0.9rem;
+        }
+
+        .channel {
+            margin-top: 0.25rem;
+        }
+
+        .description {
+            margin-top: 0.75rem;
+            color: #b3b3b3;
+            font-size: 0.85rem;
+            word-break: break-all;
+            // set text overflow to ellipsis for 4 lines
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+
+            @media (max-width: 800px) {
+                margin-top: 0.2rem;
+                font-size: 0.75rem;
+            }
+        }
+    }
+}

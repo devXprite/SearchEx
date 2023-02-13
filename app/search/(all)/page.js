@@ -27,7 +27,7 @@ const searchPage = () => {
 
     useEffect(() =>{setResults([]), setLoading(true)},[query])
 
-    console.log(results)
+    // console.log(results)
 
     return (
         <>

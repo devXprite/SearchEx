@@ -1,7 +1,7 @@
 .results__container{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    margin: 0 10%;
+    // margin: 0 10%;
     margin-top: 2rem;
     grid-gap: 3rem 1.5rem;
     align-items: center;
@@ -9,6 +9,6 @@
 
     @media (max-width: 800px) {
         grid-template-columns: 1fr 1fr;
-        margin: 0 4%;
+        // margin: 0 4%;
     }
 }

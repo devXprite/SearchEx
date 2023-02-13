@@ -1,6 +1,8 @@
 export default async (req, res) => {
     const q = req.query.q;
 
+    console.log(`Calling Cards API: q=${q}`);
+
     const wikipediaResult = await fetch(`https://en.wikipedia.org/api/rest_v1/page/summary/${q}`)
         .then((response) => response.json())
 
@@ -38,7 +40,7 @@ export default async (req, res) => {
         .then((response) => response.json())
         .catch((error) => false);
 
-        console.log(openAIResult);
+        // console.log(openAIResult);
 
     if (openAIResult) {
         res.status(200).json({
