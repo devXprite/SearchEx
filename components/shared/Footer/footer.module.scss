@@ -10,6 +10,7 @@
 
     @include mobile {
         padding: 1rem 0.5rem;
+        font-size: 0.85rem;
     }
 
     &__text {
@@ -32,12 +33,12 @@
             transition: all 0.3s;
         }
 
-        a{
+        a {
             color: $link-color;
             text-decoration: none;
         }
 
-        .location{
+        .location {
             color: $link-color
         }
     }

@@ -14,7 +14,7 @@ export default async (req, res) => {
             title: item.snippet.title,
             description: item.snippet.description,
             thumbnail: item.snippet.thumbnails.medium.url,
-            channel: item.snippet.channelTitle,
+            publishedBy: item.snippet.channelTitle,
             publishedAt: item.snippet.publishedAt,
         };
     });

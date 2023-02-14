@@ -13,4 +13,8 @@
         transform: scale(1.03);
         border-color: $link-color;
     }
+
+    @include mobile {
+        display: none;
+    }
 }

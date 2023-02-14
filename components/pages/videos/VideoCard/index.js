@@ -19,7 +19,7 @@ const formatTimeStamp = (timeStamp) => {
 
 
 const VideoCard = ({ results }) => {
-    const { title, description, thumbnail, channel, publishedAt } = results;
+    const { title, description, thumbnail, publishedBy, publishedAt } = results;
 
     return (
         <div className={styles.videoCard} onClick={() => { window.location.href = `https://www.youtube.com/watch?v=${results.id}` }}>
@@ -27,7 +27,7 @@ const VideoCard = ({ results }) => {
             <div className={styles.content}>
                 <h2 className={styles.title}>{title}</h2>
                 <p className={styles.publishedAt}>{formatTimeStamp(publishedAt)}</p>
-                <p className={styles.channel}>Published by {channel}</p>
+                <p className={styles.publishedBy}>Published by {publishedBy}</p>
                 <p className={styles.description}>{description.substring(0, 600)}</p>
             </div>
         </div>
