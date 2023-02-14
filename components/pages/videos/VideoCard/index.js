@@ -26,7 +26,7 @@ const VideoCard = ({ results }) => {
             <img className={styles.thumbnail} src={thumbnail} alt="thumbnail" />
             <div className={styles.content}>
                 <h2 className={styles.title}>{title}</h2>
-                <p className={styles.publishedAt}>Published at {formatTimeStamp(publishedAt)}</p>
+                <p className={styles.publishedAt}>{formatTimeStamp(publishedAt)}</p>
                 <p className={styles.channel}>Published by {channel}</p>
                 <p className={styles.description}>{description.substring(0, 600)}</p>
             </div>

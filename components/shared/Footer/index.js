@@ -1,15 +1,35 @@
-import styles from "./footer.module.scss";
-import Link from "next/link";
+"use client";
 
-// import noon icon for dark theme from react-icons
-import { BsMoon } from "react-icons/bs";
+import styles from "./footer.module.scss";
+import ThemeBtn from "../ThemeBtn";
+
+// import location icon from react-icons
+import { BsGeoAlt } from "react-icons/bs";
+import { useEffect, useState } from "react";
+
+const currentLocation = async () =>{
+    const response = await fetch("https://ipinfo.io/json?token=57cb832fc1de92");
+    const data = await response.json();
+    const location = `${data.city}, ${data.region}, ${data.country}`;
+    return location;
+}
 
 export default function Footer() {
+
+    const [location, setLocation] = useState("");
+
+    useEffect(() => {
+        currentLocation().then((location) => {
+            setLocation(location);
+        });
+    }, []);
+
     return (
         <footer className={styles.footer}>
             <div className={styles.footer__text}>
-                <p> <span className={styles.logo}>Apubmed</span> © Copyright 2023 Apubmed. All rights reserved.</p>
-                <p className={styles.theme}><BsMoon /> &nbsp; Dark Theme</p>
+                <p> <span className={styles.logo}>Apubmed</span> is a Free and Open Source project. <br /> You can view its source code on <a href="https://github.com/devxprite/" target="_blank">Github</a> </p>
+                <p><BsGeoAlt /> {location} </p>
+                <ThemeBtn />
             </div>
             {/* <div className={styles.footer__links}>
                 <Link href="/">Home</Link>

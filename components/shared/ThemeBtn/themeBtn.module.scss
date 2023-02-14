@@ -1,0 +1,16 @@
+@import "@/app/variables";
+
+.theme {
+    padding: 0.3rem 0.8rem;
+    border: 1px solid $border-color;
+    border-radius: 0.3rem;
+    box-shadow: $box-shadow;
+    background: $background;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &:hover {
+        transform: scale(1.03);
+        border-color: $link-color;
+    }
+}
