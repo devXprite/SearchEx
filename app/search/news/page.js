@@ -18,7 +18,7 @@ const Page = (props) => {
         fetch(`/api/search/news?q=${query}&page=${page}`)
             .then(res => res.json())
             .then(data => {
-                setResults(data.videos);
+                setResults(data);
                 setLoading(false)
             })
     }, [query]);
@@ -27,8 +27,8 @@ const Page = (props) => {
 
     return (
         <>
-            <div className={styles.videos__page}>
-                <div className={styles.results__container}>
+            <div>
+                <div>
                     {(loading) ? (
                        <>{Array.from(Array(15).keys()).map((i) => <CardSkeleton key={i} /> ) }</>
                     ) : (
