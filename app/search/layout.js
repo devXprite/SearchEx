@@ -47,12 +47,12 @@ export default function SearchLayout({ children }) {
             icon: <BsMap />,
             pathRegex: /^\/search\/maps/
         },
-        {
-            title: 'Books',
-            url: '/search/books?q=',
-            icon: <BsBook />,
-            pathRegex: /^\/search\/books/
-        },
+        // {
+        //     title: 'Books',
+        //     url: '/search/books?q=',
+        //     icon: <BsBook />,
+        //     pathRegex: /^\/search\/books/
+        // },
     ]
 
     return (

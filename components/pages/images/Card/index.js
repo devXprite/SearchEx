@@ -8,7 +8,7 @@ const Card = ({ results }) => {
     return (
         <div className={styles.card}>
             <div className={styles.card__image}>
-                <img src={link} alt="thumbnail" />
+                <img src={thumbnail} alt="" />
             </div>
             <div className={styles.card__content}>
                 <h2 className={styles.title}>{title}</h2>

@@ -1,5 +1,6 @@
 "use client"
 
+import CardSkeleton from "@/components/pages/videos/CardSkeleton";
 import VideoCard from "@/components/pages/videos/VideoCard";
 import { useSearchParams } from "next/navigation";
 import { useState, useEffect } from "react";
@@ -30,8 +31,8 @@ const Page = (props) => {
             <div className={styles.videos__page}>
                 <div className={styles.results__container}>
                     {(loading) ? (
-                    //    <>{Array.from(Array(15).keys()).map((i) => <CardSkeleton key={i} /> ) }</>
-                    <h2>loading videos results...</h2>
+                       <>{Array.from(Array(15).keys()).map((i) => <CardSkeleton key={i} /> ) }</>
+                    // <h2>loading videos results...</h2>
                     ) : (
                         <>
                             {results.map((result, i) => (
