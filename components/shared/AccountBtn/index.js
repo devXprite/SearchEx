@@ -7,10 +7,18 @@ import { useState } from 'react';
 
 export default function AccountBtn() {
 
-    const { data: session } = useSession();
-    const [isLoading, setIsLoading] = useState(true);
+    const { data: session, status } = useSession();
 
-    if (session) {
+    if (status === 'loading') {
+        return (
+            <div className={styles.accountBtn}>
+                <FaUser />
+                <p className={styles.title}>Loading...</p>
+            </div>
+        )
+    }
+
+    if (session && session.user) {
         const UserEmail = session?.user?.email;
         const UserName = session.user.name || session.user.email.split('@')[0];
 
@@ -21,7 +29,6 @@ export default function AccountBtn() {
             </div>
         )
     }
-
 
     return (
         <div className={styles.accountBtn} onClick={() => signIn()}>
