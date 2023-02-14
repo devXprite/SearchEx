@@ -11,7 +11,7 @@ const CardSkeleton = () => {
                     <div className={styles.content}>
                         <h2 className={styles.title}><Skeleton /></h2>
                         <p className={styles.publishedAt}><Skeleton /></p>
-                        <p className={styles.channel}><Skeleton /></p>
+                        <p className={styles.publishedBy}><Skeleton /></p>
                         <p className={styles.description}><Skeleton /></p>
                     </div>
                 </div>

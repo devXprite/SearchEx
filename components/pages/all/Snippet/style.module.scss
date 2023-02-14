@@ -59,6 +59,7 @@
             font-weight: normal;
             font-size: 1.3rem;
             margin-bottom: 0.5rem;
+            word-break: break-word;
 
             @include mobile {
                 font-size: 1.15rem;
@@ -68,6 +69,7 @@
         .snippet {
             font-size: 0.9rem;
             color: $tertiary-color;
+            word-break: break-word;
         }
     }
 

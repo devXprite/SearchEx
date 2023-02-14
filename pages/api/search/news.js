@@ -11,7 +11,7 @@ export default async (req, res) => {
     const articles = repsonseJson.articles.map((item,i ) => {
         return {
             title: item.title,
-            description: item.description,
+            description: item.content,
             thumbnail: item.urlToImage,
             publishedBy: item.source.name,
             publishedAt: item.publishedAt,

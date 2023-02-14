@@ -4,8 +4,7 @@ import styles from "./style.module.scss"
 import { useRouter } from "next/navigation"
 
 const ResultsSnippet = ({ results }) => {
-    const { title, link, displayLink, formattedUrl, htmlFormattedUrl, snippet, htmlSnippet, favicon, cse } = results;
-    const router = useRouter()
+    const { title, displayLink, formattedUrl, snippet, favicon, cse } = results;
 
     return (
         <div className={styles.resultsSnippet} onClick={() => { window.location.href = formattedUrl }}>
