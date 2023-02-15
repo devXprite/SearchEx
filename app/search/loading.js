@@ -1,3 +1,5 @@
-export default function Loading(params) {
-    return( <p>Page is Loading... </p> )
+import Loader from "@/components/shared/Loader";
+
+export default function Loading() {
+    return (<Loader />)
 }

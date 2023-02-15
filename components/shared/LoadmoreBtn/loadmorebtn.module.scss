@@ -1,0 +1,27 @@
+@import '@/app/variables';
+
+.loadmoreBtn {
+
+    button {
+        padding: 0.5rem 2.5rem;
+        font-size: 1.1rem;
+        border-radius: 2rem;
+        background: rgba($link-color, 0.05);
+        border: 2px solid $link-color;
+        color: $link-color;
+        margin-top: 1.5rem;
+        transition: all 0.3s;
+        box-shadow: $box-shadow;
+        cursor: pointer;
+
+        &:hover {
+            transform: scale(1.05);
+            background: rgba($link-color, 0.2);
+            box-shadow: $box-shadow-hover;
+        }
+
+        &:focus {
+            outline: none;
+        }
+    }
+}

@@ -11,6 +11,8 @@ const SearchBar = (props) => {
     const pathname = usePathname();
     const searchParams = useSearchParams();
 
+    const query = searchParams.get("q");
+
     const [search, setSearch] = useState(props.value || "");
 
     useEffect(() => {
@@ -29,8 +31,8 @@ const SearchBar = (props) => {
     }
 
     useEffect(() => {
-        fetch(`/api/history?q=${search}&p=${pathname}&t=${Date.now()}`).catch(err => console.log(err));
-    }, [search, pathname]);
+        fetch(`/api/history?q=${search}&p=${pathname}&t=${Date.now()}`).catch(err => false);
+    }, [query, pathname]);
 
     return (
         <form className={styles.searchBar + " " + props.classNames} onSubmit={handleSearch}>

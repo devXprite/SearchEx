@@ -1,0 +1,34 @@
+@import "@/app/variables";
+
+.noResults{
+    text-align: left;
+    color: $color;
+
+    h1{
+        font-weight: normal;
+        font-weight: normal;
+        font-size: 1.1rem;
+        margin: 2rem 0 1rem 0;
+
+        @include mobile{
+            font-size: 1rem;
+        }
+    }
+
+    p{
+        @include mobile{
+            font-size: 0.95rem;
+        }
+    }
+
+    ul{
+        color: $secondary-color;
+        font-size: 0.95rem;
+        margin-top: 1rem;
+        margin-left: 1rem;
+
+        @include mobile{
+            font-size: 0.8rem;
+        }
+    }
+}

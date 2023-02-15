@@ -4,9 +4,20 @@ export default async (req, res) => {
 
     console.log(`Calling Videos API: q=${q}, start=${page}`);
 
-    const response = await fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=200&q=${q}&type=video&key=${process.env.YOUTUBE_API_KEY}&pageToken=${page}`);
+    const response = await fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=200&q=${q}&type=video&key=${process.env.YOUTUBE_API_KEY}&pageToken=${page}`).catch((err) => {
+        console.log(err);
+        res.status(500).json({ error: "Internal Server Error" });
+    });
 
     const repsonseJson = await response.json();
+
+    if (!repsonseJson?.items) {
+        res.status(200).json({
+            videos: [],
+            pageInfo: {},
+        });
+        return;
+    }
 
     const videos = repsonseJson.items.map((item) => {
         return {

@@ -6,7 +6,6 @@ import CardSkeleton from "../CardSkeleton";
 import styles from "./card.module.scss"
 
 const ResultCard = () => {
-
     const searchParams = useSearchParams();
     const q = searchParams.get("q");
 
@@ -16,17 +15,15 @@ const ResultCard = () => {
     useEffect(() => {
         const fetchCardData = async () => {
             const response = await fetch(`/api/card?q=${q}`)
-                .then((response) => response.json()).catch(() => setError(true) );
-
+                .then((response) => response.json()).catch(() => setError(true));
+            if (!response.content) setError(true);
             setCardData(response);
         }
 
         fetchCardData();
     }, [q]);
 
-    if (error) {
-        return ;
-    }
+    if (error) return;
 
     return (
         <div>
