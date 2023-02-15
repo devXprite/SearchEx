@@ -3,60 +3,63 @@ export default async (req, res) => {
 
     console.log(`Calling Cards API: q=${q}`);
 
-    const wikipediaResult = await fetch(`https://en.wikipedia.org/api/rest_v1/page/summary/${q}`)
-        .then((response) => response.json())
+    try {
 
-    const isWikipedia = wikipediaResult && wikipediaResult?.description != "Topics referred to by the same term" && wikipediaResult.title !== 'Not found.';
+        const wikipediaResult = await fetch(`https://en.wikipedia.org/api/rest_v1/page/summary/${q}`)
+            .then((response) => response.json())
 
-    if (isWikipedia) {
-        res.status(200).json({
-            image: wikipediaResult?.thumbnail?.source || null,
-            title: wikipediaResult.title,
-            description: wikipediaResult.description,
-            content: wikipediaResult.extract_html,
-            type: "wiki"
-        });
+        const isWikipedia = wikipediaResult && wikipediaResult?.description != "Topics referred to by the same term" && wikipediaResult.title !== 'Not found.';
 
-        return;
+        if (isWikipedia) {
+            res.status(200).json({
+                image: wikipediaResult?.thumbnail?.source || null,
+                title: wikipediaResult.title,
+                description: wikipediaResult.description,
+                content: wikipediaResult.extract_html,
+                type: "wiki"
+            });
+
+            return;
+        }
+
+        const openAIResult = await fetch("https://api.openai.com/v1/completions", {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer sk-Agn5wL1S211E4M6R7hioT3BlbkFJ8O24MK64UdTs99OuigYux'
+            },
+            body: JSON.stringify({
+                "model": "text-davinci-003",
+                "prompt": `Write a answer for this query:\n ${q} \n\n`,
+                "temperature": 0.7,
+                "max_tokens": 256,
+                "top_p": 1,
+                "frequency_penalty": 0,
+                "presence_penalty": 0
+            }),
+            redirect: 'follow'
+        })
+            .then((response) => response.json())
+            .catch((error) => false);
+
+        if (openAIResult?.choices?.length > 0) {
+            res.status(200).json({
+                image: null,
+                title: q,
+                content: openAIResult.choices[0].text.replace(/(?:\r\n|\r|\n)/g, '<br>'),
+                description: null,
+                type: "ai"
+            });
+            return;
+        }
+
+        res.status(404).json({
+            message: "Not found!"
+        })
+
+    } catch (error) {
+        res.status(500).json({
+            message: "Internal server error!"
+        })
     }
-
-    const openAIResult = await fetch("https://api.openai.com/v1/completions", { 
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'Authorization': 'Bearer sk-Agn5wL1S211E4M6R7hioT3BlbkFJ8O24MK64UdTs99OuigYux'
-        },
-        body: JSON.stringify({
-            "model": "text-davinci-003",
-            "prompt": `Write a answer for this query:\n ${q} \n\n`,
-            "temperature": 0.7,
-            "max_tokens": 256,
-            "top_p": 1,
-            "frequency_penalty": 0,
-            "presence_penalty": 0
-        }),
-        redirect: 'follow'
-    })
-        .then((response) => response.json())
-        .catch((error) => false);
-
-        // console.log(openAIResult);
-
-    if (openAIResult) {
-        res.status(200).json({
-            image: null,
-            title: q,
-            content: openAIResult.choices[0].text.replace(/(?:\r\n|\r|\n)/g, '<br>'),
-            description: null,
-            type: "ai"
-        });
-
-        return;
-    }
-
-
-    res.status(404).json({
-        message: "Not found!"
-    })
-
 }

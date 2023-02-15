@@ -21,13 +21,16 @@ const SearchBar = (props) => {
         e.preventDefault();
         console.log("searching");
 
-        // if path is / then push to /search else just ?q= to the current path
         if (pathname === "/") {
             router.push(`/search?q=${search}`);
         } else {
             router.push(`${pathname}?q=${search}`);
         }
     }
+
+    useEffect(() => {
+        fetch(`/api/history?q=${search}&p=${pathname}&t=${Date.now()}`).catch(err => console.log(err));
+    }, [search, pathname]);
 
     return (
         <form className={styles.searchBar + " " + props.classNames} onSubmit={handleSearch}>
