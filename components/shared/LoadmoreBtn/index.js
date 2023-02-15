@@ -6,7 +6,7 @@ export default function LoadmoreBtn({ onClick, isLoading }) {
     return (
         <div className={styles.loadmoreBtn}>
             <button onClick={onClick} disabled={isLoading}>
-                {isLoading ? 'Loading...' : 'Load more'}
+                {isLoading ? 'Loading...' : 'Load more Results'}
             </button>
         </div>
     )

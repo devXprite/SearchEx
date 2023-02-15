@@ -25,8 +25,9 @@ const Page = (props) => {
             .then(res => res.json())
             .then(data => {
                 setLoading(false);
-                setResults((results) => [...results, ...data?.items || []]);
+                setResults((results) => [...results, ...data?.videos || []]);
                 setNextPageToken(data?.pageInfo?.nextPageToken || "");
+                setIsMoreLoading(false);
             })
     }, [query, page]);
 

@@ -23,6 +23,7 @@ const Page = (props) => {
             .then(data => {
                 setResults((results) => [...results, ...data || []]);
                 setLoading(false)
+                setIsMoreLoading(false);
             })
     }, [query, page])
 

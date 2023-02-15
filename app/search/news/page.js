@@ -3,6 +3,7 @@
 import CardSkeleton from "@/components/pages/videos/CardSkeleton";
 import VideoCard from "@/components/pages/videos/VideoCard";
 import LoadmoreBtn from "@/components/shared/LoadmoreBtn";
+import NoResults from "@/components/shared/NoResults";
 import { useSearchParams } from "next/navigation";
 import { useState, useEffect } from "react";
 
@@ -33,6 +34,16 @@ const Page = (props) => {
             <div>
                 <div>
                     {Array.from(Array(15).keys()).map((i) => <CardSkeleton key={i} />)}
+                </div>
+            </div>
+        )
+    }
+
+    if(!results.length) {
+        return (
+            <div>
+                <div>
+                    <NoResults query={query} type="news" />
                 </div>
             </div>
         )

@@ -21,7 +21,10 @@ const SearchBar = (props) => {
 
     const handleSearch = (e) => {
         e.preventDefault();
+        e.target.blur();
+
         console.log("searching");
+        fetch(`/api/history?q=${search}&p=${pathname}&t=${Date.now()}`).catch(err => false);
 
         if (pathname === "/") {
             router.push(`/search?q=${search}`);
@@ -29,10 +32,6 @@ const SearchBar = (props) => {
             router.push(`${pathname}?q=${search}`);
         }
     }
-
-    useEffect(() => {
-        fetch(`/api/history?q=${search}&p=${pathname}&t=${Date.now()}`).catch(err => false);
-    }, [query, pathname]);
 
     return (
         <form className={styles.searchBar + " " + props.classNames} onSubmit={handleSearch}>

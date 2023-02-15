@@ -24,7 +24,8 @@ const searchPage = () => {
             .then(res => res.json())
             .then(data => {
                 setResults((results) => [...results, ...data || []]);
-                setLoading(false)
+                setLoading(false);
+                setIsMoreLoading(false);
             })
     }, [query, page])
 
@@ -42,19 +43,19 @@ const searchPage = () => {
         )
     }
 
-    if (loading) {
-        return (
-            <>
-                <div className={styles.searchPage}>
-                    <div className={styles.results__container}>
-                        {Array.from(Array(10).keys()).map((i) => <ResultSkeleton key={i} />)}
-                    </div>
-                </div>
-            </>
-        )
-    }
+    // if (loading) {
+    //     return (
+    //         <>
+    //             <div className={styles.searchPage}>
+    //                 <div className={styles.results__container}>
+    //                     {Array.from(Array(10).keys()).map((i) => <ResultSkeleton key={i} />)}
+    //                 </div>
+    //             </div>
+    //         </>
+    //     )
+    // }
 
-    if (!results.length) {
+    if (!loading && results.length === 0) {
         return (<NoResults query={query} />)
     }
 
@@ -62,12 +63,19 @@ const searchPage = () => {
         <>
             <div className={styles.searchPage}>
                 <div className={styles.results__container}>
-                    <>
-                        {results.map(result => (
-                            <ResultsSnippet key={result.link} results={result} />
-                        ))}
-                    </>
-                    {(page < 5) && <LoadmoreBtn isLoading={isMoreLoading} onClick={() => { setPage((page) => page + 1); setIsMoreLoading(true) }} />}
+
+                    {
+                        (loading) ? (
+                            <>{Array.from(Array(10).keys()).map((i) => <ResultSkeleton key={i} />)}</>
+                        ) : (
+                            <>
+                                {results.map(result => (
+                                    <ResultsSnippet key={result.link} results={result} />
+                                ))}
+                                {(page < 4) && <LoadmoreBtn isLoading={isMoreLoading} onClick={() => { setPage((page) => page + 1); setIsMoreLoading(true) }} />}
+                            </>
+                        )
+                    }
                 </div>
                 <ResultCard />
             </div>

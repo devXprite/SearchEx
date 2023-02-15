@@ -10,6 +10,7 @@ export default function NoResults({ query, type="documents" }) {
                 <li>Try different keywords.</li>
                 <li>Try more general keywords.</li>
             </ul>
+
         </div>
     )
 }

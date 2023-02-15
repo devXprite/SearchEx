@@ -1,6 +1,14 @@
 import { getServerSession } from "next-auth"
 import mongoClient from "@/utils/db"
 import Link from "next/link";
+import styles from "./page.module.scss";
+
+// sample intput: 1676435639911
+const formarTimeStamp = (timestamp) => {
+    const date = new Date(timestamp);
+
+    return date;
+}
 
 export default async function Page() {
     const session = await getServerSession();
@@ -12,28 +20,29 @@ export default async function Page() {
 
     const searchHistory = await db.collection("history").find({
         email: email
-    }).toArray();
-  
+    }).limit(200).toArray();
+
     return (
-        <div>
+        <div className="page">
             <h2> Search History of {name} </h2>
 
-            <table>
-                <thead>
-                    <tr>
-                        <th>Query</th>
-                        <th>Time</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {searchHistory.map((item) => (
-                        <tr key={item._id}>
-                            <td><Link href={`/search?q=${item.query}`}>{item.query}</Link></td>
-                            <td>{item.localTimestamp}</td>
-                        </tr>
-                    ))}
-                </tbody>
-            </table>
+            <div className={styles.history}>
+                {searchHistory.map((item, index) => (
+                    <div className={styles.item} key={index}>
+                        <p>
+                            {/* <span className={styles.item__timestamp}>
+                                {(item.localTimestamp)}
+                            </span> */}
+                            <span className={styles.item__query}>
+                                {item.query}
+                            </span>
+                            <span className={styles.item__path}>
+                                {item.path}
+                            </span>
+                        </p>
+                    </div>
+                ))}
+            </div>
         </div>
     )
 }

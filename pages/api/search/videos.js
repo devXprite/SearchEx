@@ -11,7 +11,9 @@ export default async (req, res) => {
 
     const repsonseJson = await response.json();
 
-    if (!repsonseJson?.items) {
+    // console.log(repsonseJson);
+
+    if (repsonseJson?.items?.length === 0) {
         res.status(200).json({
             videos: [],
             pageInfo: {},
