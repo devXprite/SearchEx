@@ -14,6 +14,11 @@
         box-shadow: $box-shadow;
         cursor: pointer;
 
+        @include mobile {
+            padding: 0.35rem 1rem;
+            font-size: 1rem;
+        }
+
         &:hover {
             transform: scale(1.05);
             background: rgba($link-color, 0.2);

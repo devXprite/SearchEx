@@ -9,6 +9,29 @@
     padding: 0;
 }
 
+html{
+    ::-webkit-scrollbar {
+        width: 0.4rem;
+
+        @include mobile {
+            width: 0.2rem;
+        }
+    }
+
+    ::-webkit-scrollbar-track {
+        background: $background;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: $border-color;
+        border-radius: 0.5rem;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: $tertiary-color;
+    }
+}
+
 body {
     background-color: $background;
     color: $color;
