@@ -101,8 +101,8 @@ const SearchBar = (props) => {
                 onSuggestionSelected={onSuggestionSelected}
                 renderInputComponent={renderInputComponent} 
                 inputProps={{
-                    placeholder: 'Type a programming language',
-                    value: search || query || "",
+                    placeholder: 'Start typing to search ...',
+                    value: search || "",
                     onChange: (e) => setSearch(e.target.value)
                 }}
                 theme={{
