@@ -1,20 +1,19 @@
-// @import "@/app/mixins";
+@import "@/app/mixins";
 
-// .theme {
-//     padding: 0.3rem 0.8rem;
-//     border: 1px solid var(--border-color);
-//     border-radius: 0.3rem;
-//     box-shadow: var(--box-shadow);
-//     background: var(--background);
-//     cursor: pointer;
-//     transition: all 0.3s;
+.theme {
+    padding: 0.3rem 0.8rem;
+    border: 1px solid var(--border-color);
+    border-radius: 0.3rem;
+    box-shadow: var(--box-shadow);
+    background: var(--background);
+    cursor: pointer;
+    transition: all 0.3s;
 
-//     &:hover {
-//         transform: scale(1.03);
-//         border-color: var(--link-color);
-//     }
+    &:hover {
+        transform: scale(1.03);
+    }
 
-//     @include mobile {
-//         display: none;
-//     }
-// }
+    @include mobile {
+        // display: none;
+    }
+}

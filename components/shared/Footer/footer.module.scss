@@ -1,5 +1,11 @@
 @import "@/app/mixins";
 
+html[data-theme="light"] {
+    .footer{
+        box-shadow: rgb(0 0 0 / 7%) 0px -2px 6px;
+    }
+}
+
 .footer {
     box-shadow: rgb(0 0 0 / 40%) 0px -2px 6px;
     background: var(--primary-background);

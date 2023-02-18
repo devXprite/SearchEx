@@ -1,8 +1,9 @@
 import { Session } from 'next-auth'
 import { headers } from 'next/headers'
-import AuthContext from './AuthContext';
+import AuthContext from '@/context/AuthContext';
 import Footer from '@/components/shared/Footer'
 import './globals.scss'
+import { ThemeProvider } from '@/context/ThemeContext';
 
 async function getSession(cookies) {
   const response = await fetch(`${process.env.NEXTAUTH_URL}/api/auth/session`, {
@@ -20,18 +21,19 @@ export default async function RootLayout({ children }) {
 
   const session = await getSession(headers().get('cookie') ?? '');
 
-
   return (
-    <html lang="en" data-theme="light">
-      <head />
-      <body>
-        <main>
-          <AuthContext session={session}>
-            {children}
-          </AuthContext>
-        </main>
-        <Footer />
-      </body>
-    </html>
+    <ThemeProvider>
+      <html lang="en" >
+        <head />
+        <body>
+          <main>
+            <AuthContext session={session}>
+              {children}
+            </AuthContext>
+          </main>
+          <Footer />
+        </body>
+      </html>
+    </ThemeProvider>
   )
 }
