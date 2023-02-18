@@ -1,21 +1,21 @@
-@import '@/app/variables';
+@import '@/app/mixins';
 
 .accountBtn {
     border-radius: 2rem;
-    background: $background;
-    color: $color;
+    background: var(--background);
+    color: var(--color);
     display: inline-flex;
     flex-direction: row;
     align-items: center;
-    box-shadow: $box-shadow;
-    border: $border-color solid 1px;
+    box-shadow: var(--box-shadow);
+    border: var(--border-color) solid 1px;
     transition: all 0.3s;
     cursor: pointer;
     float: right;
 
     &:hover {
         transform: scale(1.075);
-        box-shadow: $box-shadow-hover;
+        box-shadow: var(--box-shadow-hover);
     }
 
     img,

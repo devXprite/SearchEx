@@ -1,4 +1,4 @@
-@import "@/app/variables";
+@import "@/app/mixins";
 
 .account_page {
     min-height: 100vh;
@@ -9,20 +9,20 @@
         margin: auto;
         display: inline-block;
         padding: 2rem 1.5rem;
-        background: $primary-background;
+        background: var(--primary-background);
         border-radius: 0.5rem;
-        box-shadow: $box-shadow;
+        box-shadow: var(--box-shadow);
         font-weight: normal;
         transition: all 0.3s;
-        border: 1px solid rgba($border-color, 0.5);
+        border: 1px solid rgba(var(--border-color), 0.5);
 
         @include mobile {
             max-width: 94%;
         }
 
         &:hover {
-            box-shadow: $box-shadow-hover;
-            background: $secondary-background;
+            box-shadow: var(--box-shadow-hover);
+            background: var(--secondary-background);
             transform: scale(1.01);
         }
 
@@ -30,7 +30,7 @@
             max-width: 14rem;
             border-radius: 50%;
             margin-bottom: 0.5rem;
-            box-shadow: $box-shadow;
+            box-shadow: var(--box-shadow);
             border: 0.2rem solid orange;
             transition: all 0.3s;
 
@@ -39,7 +39,7 @@
             }
 
             &:hover {
-                box-shadow: $box-shadow-hover;
+                box-shadow: var(--box-shadow-hover);
                 transform: scale(1.05);
             }
         }
@@ -51,7 +51,7 @@
 
         .email {
             font-size: 1.5rem;
-            color: $secondary-color;
+            color: var(--secondary-color);
         }
 
         .buttons {
@@ -66,22 +66,22 @@
             }
 
             button,.btn {
-                // color: $color;
+                // color: var(--color);
                 color: black;
                 font-size: 1.1rem;
                 padding: 0.5rem 1rem;
                 border-radius: 0.3rem;
-                border: 1px solid $border-color;
-                // background: $background;
+                border: 1px solid var(--border-color);
+                // background: var(--background);
                 background: deepskyblue;
-                box-shadow: $box-shadow;
+                box-shadow: var(--box-shadow);
                 transition: all 0.3s;
                 font-family: 'Ubuntu', sans-serif;
                 cursor: pointer;
 
                 &:hover {
-                    box-shadow: $box-shadow-hover;
-                    // background: $primary-background;
+                    box-shadow: var(--box-shadow-hover);
+                    // background: var(--primary-background);
                     transform: scale(1.05);
                 }
 

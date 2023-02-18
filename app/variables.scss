@@ -1,37 +1,57 @@
-$background: #161616;
-$primary-background: lighten($background, 3%);
-$secondary-background: lighten($background, 8%);
+$variables-dark: (
+    background: #161616,
+    primary-background: lighten(#161616, 3%),
+    secondary-background: lighten(#161616, 8%),
 
-$color: #f7f7f7;
-$primary-color: darken($color, 10%);
-$secondary-color: darken($color, 20%);
-$tertiary-color: darken($color, 30%);
-$border-color: darken($color, 55%);
-// $link-color: #4da3ff;
-$link-color: #4dafff;
-// $link-color: #4dbeff;
+    color: #f7f7f7,
+    primary-color: darken(#f7f7f7, 10%),
+    secondary-color: darken(#f7f7f7, 20%),
+    tertiary-color: darken(#f7f7f7, 30%),
+    border-color: darken(#f7f7f7, 55%),
+    link-color: #4dafff,
 
-$logo-gradient: linear-gradient(110deg,#7b0afd .56%,#00fff0 103%);
+    logo-gradient: linear-gradient(110deg, #7b0afd .56%, #00fff0 103%),
 
-$border-radius: 0.5rem;
-$box-shadow: 2px 4px 4px rgb(0 0 0 / 25%);
-$box-shadow-hover: 2px 4px 8px rgb(0 0 0 / 60%);
+    border-radius: 0.5rem,
+    box-shadow: 2px 4px 4px rgb(0 0 0 / 25%),
+    box-shadow-hover: 2px 4px 8px rgb(0 0 0 / 60%)
+);
 
-html.light{
-    $background: #f7f7f7;
-    $primary-background: darken($background, 4%);
-    $secondary-background: darken($background, 8%);
+$variables-light: (
+    background: white,
+    primary-background: darken(white, 3%),
+    secondary-background: darken(white, 8%),
 
-    $color: #1b1b1b;
-    $primary-color: lighten($color, 10%);
-    $secondary-color: lighten($color, 20%);
-    $tertiary-color: lighten($color, 30%);
-    $border-color: lighten($color, 40%);
+    color: #000,
+    primary-color: lighten(#000, 10%),
+    secondary-color: lighten(#000, 20%),
+    tertiary-color: lighten(#000, 25%),
+    border-color: lighten(#000, 55%),
+    link-color: #006ce3,
+
+    logo-gradient: linear-gradient(110deg, #7b0afd .56%, #00fff0 103%),
+
+    border-radius: 0.5rem,
+    box-shadow: 2px 4px 4px rgb(0 0 0 / 10%),
+    box-shadow-hover: 2px 4px 8px rgb(0 0 0 / 20%)
+);
+
+:root {
+
+    @each $key,
+    $value in $variables-dark {
+        --#{$key}: #{$value};
+    }
 }
 
+html[data-theme="light"] {
 
-@mixin mobile {
-    @media screen and (max-width: 800px) {
-        @content;
+    @each $key,
+    $value in $variables-light {
+        --#{$key}: #{$value};
     }
+}
+
+@function Var($key) {
+    @return var(--#{$key});
 }

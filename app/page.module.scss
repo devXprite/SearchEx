@@ -1,4 +1,4 @@
-@import '@/app/variables';
+@import '@/app/mixins';
 
 .accountBtn_container{
   position: absolute;
@@ -12,7 +12,7 @@
   color: #fff;
   text-decoration: none;
   margin-top: 17vh;
-  background: $logo-gradient;
+  background: var(--logo-gradient);
   display: inline-block;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -29,7 +29,7 @@
 .tagline {
   font-weight: lighter;
   font-size: 1.7rem;
-  color: $color;
+  color: var(--color);
   text-decoration: none;
   margin-top: 0rem;
   letter-spacing: 4px;

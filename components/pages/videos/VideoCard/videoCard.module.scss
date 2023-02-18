@@ -1,4 +1,4 @@
-@import '@/app/variables';
+@import '@/app/mixins';
 
 .videoCard {
     display: grid;
@@ -25,8 +25,8 @@
     }
 
     &:hover {
-        box-shadow: $box-shadow;
-        background: $secondary-background;
+        box-shadow: var(--box-shadow);
+        background: var(--secondary-background);
         transform: scale(1.03);
 
         .thumbnail {
@@ -54,12 +54,12 @@
         }
 
         .title {
-            color: $link-color;
+            color: var(--link-color);
             font-size: 1.3rem;
             font-weight: normal;
 
             @include mobile {
-                color: $primary-color;
+                color: var(--primary-color);
                 font-size: 1rem;
                 border: none;
                 // ellipsis for 2 lines
@@ -72,7 +72,7 @@
 
         .publishedAt {
             margin-top: 0.25rem;
-            color: $tertiary-color;
+            color: var(--tertiary-color);
             font-size: 0.9rem;
 
             &::before {

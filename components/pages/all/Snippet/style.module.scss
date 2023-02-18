@@ -1,11 +1,11 @@
-@import '@/app/variables';
+@import '@/app/mixins';
 
 .resultsSnippet {
     text-decoration: none;
     background: transparent;
     border-radius: 0.5rem;
     transition: all 0.3s ease-in-out;
-    color: $primary-color;
+    color: var(--primary-color);
     text-align: left;
     padding: 1rem;
     margin: 1rem 0;
@@ -17,7 +17,7 @@
     }
 
     &:hover {
-        background: $secondary-background;
+        background: var(--secondary-background);
         box-shadow: #00000040 2px 4px 8px;
         transform: scale(1.02);
     }
@@ -37,7 +37,7 @@
 
         .url {
             width: 100%;
-            color: $primary-color;
+            color: var(--primary-color);
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
@@ -55,7 +55,7 @@
 
     .body {
         .title {
-            color: $link-color;
+            color: var(--link-color);
             font-weight: normal;
             font-size: 1.3rem;
             margin-bottom: 0.5rem;
@@ -68,7 +68,7 @@
 
         .snippet {
             font-size: 0.9rem;
-            color: $tertiary-color;
+            color: var(--tertiary-color);
             word-break: break-word;
         }
     }
@@ -77,7 +77,7 @@
         height: 6rem;
         border-radius: 1rem;
         margin-left: 2rem;
-        box-shadow: $box-shadow;
+        box-shadow: var(--box-shadow);
 
         @include mobile {
             display: none;

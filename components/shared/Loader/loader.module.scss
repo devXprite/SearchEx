@@ -1,4 +1,4 @@
-@import "@/app/variables";
+@import "@/app/mixins";
 
 .loader {
     margin-top: 2rem;
@@ -22,7 +22,7 @@
         width: 7px;
         height: 7px;
         border-radius: 50%;
-        background: $secondary-color;
+        background: var(--secondary-color);
         margin: -4px 0 0 -4px;
     }
 

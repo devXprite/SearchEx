@@ -1,3 +1,4 @@
+@import '@/app/mixins';
 @import '@/app/variables';
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
 
@@ -19,22 +20,22 @@ html{
     }
 
     ::-webkit-scrollbar-track {
-        background: $background;
+        background: var(----background)
     }
 
     ::-webkit-scrollbar-thumb {
-        background: $border-color;
+        background: var(----tertiary-color);
         border-radius: 0.5rem;
     }
 
     ::-webkit-scrollbar-thumb:hover {
-        background: $tertiary-color;
+        background: var(----secondary-color);
     }
 }
 
 body {
-    background-color: $background;
-    color: $color;
+    background-color: var(--background);
+    color: var(--color);
     text-align: center;
     font-family: 'Ubuntu', sans-serif;
     min-height: 100vh;

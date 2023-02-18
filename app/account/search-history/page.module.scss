@@ -1,16 +1,16 @@
-@import '@/app/variables';
+@import '@/app/mixins';
 
 .history{
     .item{
         &__query{
             font-size: 1.2rem;
-            color: $color;
+            color: var(--color);
         }
 
         &__path{
             padding-left: 0.5rem;
             font-size: 1rem;
-            color: $secondary-color;
+            color: var(--secondary-color);
         }
     }
 }

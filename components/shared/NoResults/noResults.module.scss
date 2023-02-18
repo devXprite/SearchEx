@@ -1,8 +1,8 @@
-@import "@/app/variables";
+@import "@/app/mixins";
 
 .noResults{
     text-align: left;
-    color: $color;
+    color: var(--color);
 
     h1{
         font-weight: normal;
@@ -22,7 +22,7 @@
     }
 
     ul{
-        color: $secondary-color;
+        color: var(--secondary-color);
         font-size: 0.95rem;
         margin-top: 1rem;
         margin-left: 1rem;

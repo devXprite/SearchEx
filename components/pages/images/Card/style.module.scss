@@ -1,4 +1,4 @@
-@import '@/app/variables';
+@import '@/app/mixins';
 
 .card {
     cursor: pointer;
@@ -8,7 +8,7 @@
     &:hover {
         transform: scale(1.05);
         .card__image img {
-            box-shadow: $box-shadow;
+            box-shadow: var(--box-shadow);
         } 
     }
 
@@ -16,8 +16,8 @@
         img {
             width: 100%;
             border-radius: 0.5rem;
-            box-shadow: $box-shadow;
-            border: 1px solid $border-color;
+            box-shadow: var(--box-shadow);
+            border: 1px solid var(--border-color);
         }
     }
 
@@ -37,7 +37,7 @@
 
         .snippet {
             font-size: 0.75rem;
-            color: $secondary-color;
+            color: var(--secondary-color);
             overflow: hidden;
             text-overflow: ellipsis;
             display: -webkit-box;

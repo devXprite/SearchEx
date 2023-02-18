@@ -1,7 +1,7 @@
-@import '@/app/variables';
+@import '@/app/mixins';
 
 .card {
-    border: 2px solid $border-color;
+    border: 2px solid var(--border-color);
     padding: 1rem;
     border-radius: 0.5rem;
     width: 72%;
@@ -9,7 +9,7 @@
     margin-top: 1.2rem;
     margin-left: 7%;
     text-align: left;
-    box-shadow: $box-shadow;
+    box-shadow: var(--box-shadow);
 
     &.skeleton{
         border-color: transparent;
@@ -28,7 +28,7 @@
         width: 100%;
         max-height: 15rem;
         border-radius: 0.5rem;
-        box-shadow: $box-shadow;
+        box-shadow: var(--box-shadow);
     }
 
     .title {
@@ -40,7 +40,7 @@
     }
 
     .content{
-        color: $secondary-color;
+        color: var(--secondary-color);
         font-size: 0.9rem;
         margin-top: 1rem;
     }

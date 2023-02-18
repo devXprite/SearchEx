@@ -1,97 +1,14 @@
-@import '@/app/variables';
-
-// .searchBar {
-//     width: 100%;
-//     max-width: 46rem;
-//     height: 3rem;
-//     border: 2px solid $border-color;
-//     border-radius: 3rem;
-//     // display: flex;
-//     flex-direction: row;
-//     justify-content: space-evenly;
-//     margin: 0 auto;
-//     box-shadow: $box-shadow;
-//     transition: all 0.3s;
-//     background: $background;
-
-//     &:hover {
-//         transform: scale(1.01);
-//         box-shadow: $box-shadow-hover;
-//     }
-
-//     @include mobile {
-//         max-width: 95%;
-//         height: 2.5rem;
-//     }
-
-//     &:focus-within {
-//         box-shadow: rgb(0 0 0 / 80%) 2px 2px 6px;
-//         border-color: darken($link-color, 10%);
-//         transform: scale(1.01);
-
-//         button{
-//             background: darken($link-color, 20%);
-//             &:hover {
-//                 background: darken($link-color, 30%);
-//             }
-//             svg {
-//                 fill: $color;
-//             }
-//         }
-//     }
-
-//     input {
-//         border: none;
-//         border-radius: 5rem;
-//         background: transparent;
-//         width: 100%;
-//         font-size: 1.3rem;
-//         color: $color;
-//         padding-left: 1rem;
-
-//         @include mobile {
-//             font-size: 1.1rem;
-//         }
-
-//         &:focus {
-//             outline: none;
-//         }
-//     }
-
-//     button {
-//         border: none;
-//         border-radius: 5rem;
-//         display: flex;
-//         justify-content: center;
-//         align-items: center;
-//         background: transparent;
-//         overflow: hidden;
-//         margin: 0.1rem;
-//         transition: all 0.3s;
-//         cursor: pointer;
-
-//         svg {
-//             width: 3rem;
-//             height: 1.25rem;
-//             fill: $tertiary-color;
-
-//             @include mobile {
-//                 width: 2.8rem;
-//                 height: 1.15rem;
-//             }
-//         }
-//     }
-// }
+@import '@/app/mixins';
 
 .searchBar {
     width: 100%;
     max-width: 46rem;
-    border: 1px solid $border-color;
+    border: 1px solid var(--border-color);
     border-radius: 5rem;
     background: transparent;
     transition: all 0s;
     margin: 0 auto;
-    box-shadow: $box-shadow;
+    box-shadow: var(--box-shadow);
     position: relative;
 
     @include mobile {
@@ -99,17 +16,18 @@
     }
 
     &:focus-within {
-        border-color: darken($link-color, 10%);
+        $border-color: #4dafff;
+        border-color: darken($border-color, 10%);
 
         button {
-            background: darken($link-color, 20%);
+            background: darken($border-color, 20%);
 
             &:hover {
-                background: darken($link-color, 30%);
+                background: darken($border-color, 30%);
             }
 
             svg {
-                fill: $color;
+                fill: var(--color);
             }
         }
     }
@@ -126,7 +44,7 @@
         input {
             width: 100%;
             font-size: 1.3rem;
-            color: $color;
+            color: var(--color);
             padding: 0.5rem 0.5rem .5rem 2rem;
             background: transparent;
             border: none;
@@ -156,7 +74,7 @@
             svg {
                 width: 3rem;
                 height: 1.25rem;
-                fill: $tertiary-color;
+                fill: var(--tertiary-color);
 
                 @include mobile {
                     width: 2.8rem;
@@ -167,7 +85,7 @@
     }
 
     .suggestionsContainer {
-        background: $primary-background;
+        background: var(--primary-background);
         max-height: 10rem;
         overflow: hidden scroll;
         position: absolute;
@@ -176,7 +94,7 @@
         left: 0;
         border-radius: 0 0 0.5rem 0.5rem;
         z-index: 2;
-        box-shadow: $box-shadow-hover;
+        box-shadow: var(--box-shadow-hover);
         transition: all 0.2s;
 
         &::-webkit-scrollbar-track {
@@ -184,7 +102,7 @@
         }
 
         &__open {
-            border: 1px solid $border-color;
+            border: 1px solid var(--border-color);
         }
 
         .suggestion {
@@ -192,7 +110,7 @@
             padding: 0.5rem 1rem;
             text-align: left;
             cursor: pointer;
-            color: $secondary-color;
+            color: var(--secondary-color);
 
             @include mobile {
                 font-size: 1rem;
@@ -200,14 +118,14 @@
 
             .searchIcon {
                 font-size: 1rem;
-                fill: $tertiary-color;
+                fill: var(--tertiary-color);
                 margin-right: 0.5rem;
             }
         }
 
         .suggestionHighlighted {
             background: #000;
-            color: $link-color;
+            color: var(--link-color);
         }
     }
 }

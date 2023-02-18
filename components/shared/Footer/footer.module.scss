@@ -1,12 +1,12 @@
-@import "@/app/variables";
+@import "@/app/mixins";
 
 .footer {
     box-shadow: rgb(0 0 0 / 40%) 0px -2px 6px;
-    background: $primary-background;
-    border-top: 1px solid rgba($border-color, 0.6);
+    background: var(--primary-background);
+    border-top: 1px solid rgba(var(--border-color), 0.6);
     padding: 1rem 2rem;
     margin-top: 2rem;
-    color: $secondary-color;
+    color: var(--secondary-color);
 
     @include mobile {
         padding: 1rem 0.5rem;
@@ -24,7 +24,7 @@
         }
 
         .logo {
-            background: linear-gradient(110deg, #7b0afd 0.56%, #00fff0 103%);
+            background: var(--logo-gradient);
             display: inline-block;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -34,12 +34,12 @@
         }
 
         a {
-            color: $link-color;
+            color: var(--link-color);
             text-decoration: none;
         }
 
         .location {
-            color: $link-color
+            color: var(--link-color);
         }
     }
 }
