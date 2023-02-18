@@ -7,7 +7,7 @@ $variables-dark: (
     primary-color: darken(#f7f7f7, 10%),
     secondary-color: darken(#f7f7f7, 20%),
     tertiary-color: darken(#f7f7f7, 30%),
-    border-color: darken(#f7f7f7, 55%),
+    border-color: rgba(darken(#f7f7f7, 50%), 0.4),
     link-color: #4dafff,
 
     logo-gradient: linear-gradient(110deg, #7b0afd .56%, #00fff0 103%),
@@ -18,22 +18,22 @@ $variables-dark: (
 );
 
 $variables-light: (
-    background: white,
-    primary-background: darken(white, 3%),
-    secondary-background: darken(white, 8%),
+    background: #fefefe,
+    primary-background: darken(white, 2%),
+    secondary-background: darken(white, 3%),
 
-    color: #000,
+    color: lighten(#000, 4%),
     primary-color: lighten(#000, 10%),
     secondary-color: lighten(#000, 20%),
     tertiary-color: lighten(#000, 25%),
-    border-color: lighten(#000, 55%),
+    border-color: rgba(lighten(#000, 50%), 0.3),
     link-color: #006ce3,
 
     logo-gradient: linear-gradient(110deg, #7b0afd .56%, #00fff0 103%),
 
     border-radius: 0.5rem,
-    box-shadow: 2px 4px 4px rgb(0 0 0 / 10%),
-    box-shadow-hover: 2px 4px 8px rgb(0 0 0 / 20%)
+    box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.08),
+    box-shadow-hover: 2px 6px 14px rgba(0, 0, 0, 0.15)
 );
 
 :root {

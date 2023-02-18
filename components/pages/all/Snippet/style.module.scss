@@ -18,8 +18,8 @@
 
     &:hover {
         background: var(--secondary-background);
-        box-shadow: #00000040 2px 4px 8px;
-        transform: scale(1.02);
+        box-shadow: var(--box-shadow);
+        transform: scale(1.01);
     }
 
     .head {
