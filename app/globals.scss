@@ -42,6 +42,9 @@ body {
     // display: flex;
     // flex-direction: column;
 
+    // remove blue tap highlight on mobile
+    -webkit-tap-highlight-color: transparent;    
+
     main{
         // flex: 1;
         min-height: 100vh;

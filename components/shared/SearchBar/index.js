@@ -23,7 +23,7 @@ const fetchSuggestions = async (search, signal) => {
 }
 
 const renderSuggestion = suggestion => (
-    <p onClick={() => console.log("clicked")}>
+    <p>
         <span className={styles.searchIcon}><FaSearch /></span> {suggestion}
     </p>
 );
@@ -47,13 +47,7 @@ const SearchBar = (props) => {
     const query = searchParams.get("q");
 
     const [search, setSearch] = useState(props.value || "");
-    const [suggestions, setSuggestions] = useState([
-        "World Cup",
-        "Elon Musk",
-        "Facebook",
-        "Artificial Intelligence",
-        "Narendra Modi",
-    ]);
+    const [suggestions, setSuggestions] = useState([]);
 
 
     useEffect(() => {
@@ -87,7 +81,15 @@ const SearchBar = (props) => {
 
     const onSuggestionSelected = (e, { suggestion }) => {
         console.log("selected", suggestion);
+
         setSearch(suggestion);
+    
+        if (pathname === "/") {
+            router.push(`/search?q=${suggestion}`);
+        } else {
+            router.push(`${pathname}?q=${suggestion}`);
+        }
+
     }
 
     return (
@@ -99,7 +101,7 @@ const SearchBar = (props) => {
                 renderSuggestion={renderSuggestion}
                 getSuggestionValue={suggestion => suggestion}
                 onSuggestionSelected={onSuggestionSelected}
-                renderInputComponent={renderInputComponent} 
+                renderInputComponent={renderInputComponent}
                 inputProps={{
                     placeholder: 'Start typing to search ...',
                     value: search || "",

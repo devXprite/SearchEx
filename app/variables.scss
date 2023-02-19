@@ -44,7 +44,9 @@ $variables-light: (
     }
 }
 
-html[data-theme="light"] {
+html[data-theme="light"] ,
+body[data-theme="light"]
+{
 
     @each $key,
     $value in $variables-light {

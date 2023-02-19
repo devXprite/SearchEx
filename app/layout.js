@@ -3,7 +3,8 @@ import { headers } from 'next/headers'
 import AuthContext from '@/context/AuthContext';
 import Footer from '@/components/shared/Footer'
 import './globals.scss'
-import { ThemeProvider } from '@/context/ThemeContext';
+import { ThemeProvider, ThemeContext } from '@/context/ThemeContext';
+
 
 async function getSession(cookies) {
   const response = await fetch(`${process.env.NEXTAUTH_URL}/api/auth/session`, {
