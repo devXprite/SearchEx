@@ -28,7 +28,7 @@ export default function Footer() {
         <footer className={styles.footer}>
             <div className={styles.footer__text}>
                 <p className={styles.location} ><BsGeoAlt /> {location} </p>
-                <p> <span className={styles.logo}>Apubmed</span> is a Free and Open Source project. <br /> You can view its source code on <a href="https://github.com/devxprite/" target="_blank">Github</a> </p>
+                <p> <span className={styles.logo}>Apubmed</span> is a Free and Open Source project. <br /> You can view its source code on <a href="https://github.com/" target="_blank">Github</a> </p>
                 <ThemeBtn />
             </div>
             {/* <div className={styles.footer__links}>
