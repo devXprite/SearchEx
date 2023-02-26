@@ -26,11 +26,11 @@ export default async (req, res) => {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': 'Bearer sk-Agn5wL1S211E4M6R7hioT3BlbkFJ8O24MK64UdTs99OuigYux'
+                'Authorization': 'Bearer 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'
             },
             body: JSON.stringify({
                 "model": "text-davinci-003",
-                "prompt": `Write a answer for this query:\n ${q} \n\n`,
+                "prompt": `Write a answer for this query if any answer not available then return na. Query:\n ${q}\n Answer: \n`,
                 "temperature": 0.7,
                 "max_tokens": 256,
                 "top_p": 1,
@@ -43,6 +43,14 @@ export default async (req, res) => {
             .catch((error) => false);
 
         if (openAIResult?.choices?.length > 0) {
+
+            if (openAIResult.choices[0].text.toLowerCase() === "na") {
+                res.status(404).json({
+                    message: "Not found!"
+                })
+                return;
+            }
+
             res.status(200).json({
                 image: null,
                 title: q,

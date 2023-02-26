@@ -6,8 +6,8 @@ import { useContext } from "react";
 const ResultSkeleton = () => {
 
     const { theme } = useContext(ThemeContext);
-    const baseColor = theme === "dark" ? "#343434" : "#f5f5f5";
-    const highlightColor = theme === "dark" ? "#565656" : "#e5e5e5";
+    const baseColor = theme === "light" ? "#f5f5f5" : "#343434";
+    const highlightColor = theme === "light" ? "#e5e5e5" : "#565656";
 
     return (
         <SkeletonTheme count={9} baseColor={baseColor} highlightColor={highlightColor}>

@@ -3,7 +3,7 @@
 import styles from "./style.module.scss"
 import { FaSearch } from "react-icons/fa";
 import { useRouter, usePathname, useSearchParams } from 'next/navigation';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Autosuggest from 'react-autosuggest';
 
 
@@ -43,6 +43,7 @@ const SearchBar = (props) => {
     const router = useRouter();
     const pathname = usePathname();
     const searchParams = useSearchParams();
+    const inputRef = useRef();
 
     const query = searchParams.get("q");
 
@@ -67,22 +68,20 @@ const SearchBar = (props) => {
 
     const handleSearch = (e) => {
         e.preventDefault();
-        e.target.blur();
-
-        console.log("searching");
-        fetch(`/api/history?q=${search}&p=${pathname}&t=${Date.now()}`).catch(err => false);
+        inputRef.current.blur();
 
         if (pathname === "/") {
             router.push(`/search?q=${search}`);
         } else {
             router.push(`${pathname}?q=${search}`);
         }
+
+        fetch(`/api/history?q=${search}&p=${pathname}&t=${Date.now()}`).catch(err => false);
     }
 
     const onSuggestionSelected = (e, { suggestion }) => {
-        console.log("selected", suggestion);
-
         setSearch(suggestion);
+        inputRef.current.blur();
     
         if (pathname === "/") {
             router.push(`/search?q=${suggestion}`);
@@ -105,7 +104,8 @@ const SearchBar = (props) => {
                 inputProps={{
                     placeholder: 'Start typing to search ...',
                     value: search || "",
-                    onChange: (e) => setSearch(e.target.value)
+                    onChange: (e) => setSearch(e.target.value),
+                    ref: inputRef
                 }}
                 theme={{
                     container: styles.searchBar,

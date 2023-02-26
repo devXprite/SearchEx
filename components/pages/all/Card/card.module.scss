@@ -10,8 +10,29 @@
     margin-left: 7%;
     text-align: left;
     box-shadow: var(--box-shadow);
+    position: relative;
 
-    &.skeleton{
+    &.ai {
+        border: none;
+
+        &::before {
+            content: "";
+            position: absolute;
+            border-radius: 0.5rem;
+
+            inset: 0;
+            padding: 2px;
+            background: linear-gradient(130deg, #027bfd -24.67%, #9f51fb 53.55%);
+            -webkit-mask:
+                linear-gradient(#fff 0 0) content-box,
+                linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+        }
+    }
+
+
+    &.skeleton {
         border-color: transparent;
         box-shadow: none;
     }
@@ -39,7 +60,7 @@
         }
     }
 
-    .content{
+    .content {
         color: var(--secondary-color);
         font-size: 0.9rem;
         margin-top: 1rem;
