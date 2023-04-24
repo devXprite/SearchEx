@@ -10,7 +10,7 @@ export default function Home() {
       <div className={styles.accountBtn_container}>
         <AccountBtn />
       </div>
-      <h1 className={styles.logo}>Apubmed</h1>
+      <h1 className={styles.logo}>WebProwlr</h1>
       <p className={styles.tagline}>Empowering your search with AI</p>
       <SearchBar />
     </>

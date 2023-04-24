@@ -23,16 +23,15 @@ export default async function Page() {
     }).limit(200).toArray();
 
     return (
-        <div className="page">
+        <div className={styles.page}>
             <h2> Search History of {name} </h2>
 
             <div className={styles.history}>
                 {searchHistory.map((item, index) => (
-                    <div className={styles.item} key={index}>
-                        <p>
-                            {/* <span className={styles.item__timestamp}>
+                        <p className={styles.item} key={index}>
+                            <span className={styles.item__timestamp}>
                                 {(item.localTimestamp)}
-                            </span> */}
+                            </span>
                             <span className={styles.item__query}>
                                 {item.query}
                             </span>
@@ -40,7 +39,6 @@ export default async function Page() {
                                 {item.path}
                             </span>
                         </p>
-                    </div>
                 ))}
             </div>
         </div>

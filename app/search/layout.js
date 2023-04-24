@@ -60,7 +60,7 @@ export default function SearchLayout({ children }) {
             <div className={styles.search__layout}>
                 <div className={styles.header}>
                     <div className={styles.container__logo}>
-                    <Link href={'/'}><span className={styles.logo}>Apubmed</span> </Link>
+                    <Link href={'/'}><span className={styles.logo}>WebProwlr</span> </Link>
                     </div>
                     <div className={styles.container__search}>
                         <div className={styles.search}>

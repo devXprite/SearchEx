@@ -1,7 +1,24 @@
 @import '@/app/mixins';
 
+.page > h2{
+    margin: 10vh 0 5vh 0;
+    font-size: 2.5rem;
+}
+
 .history{
+
+    max-width: 40rem;
+    background-color: var(--secondary-background);
+    margin: auto;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+
+
     .item{
+
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+
         &__query{
             font-size: 1.2rem;
             color: var(--color);
