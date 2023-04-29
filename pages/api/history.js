@@ -24,7 +24,7 @@ export default async function handler(req, res) {
     const client = await mongoClint;
     const db = client.db();
 
-    const result = await db.collection('history').insertOne({
+    await db.collection('history').insertOne({
         email,
         query,
         path,

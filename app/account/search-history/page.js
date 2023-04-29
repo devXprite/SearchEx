@@ -3,7 +3,6 @@ import mongoClient from "@/utils/db"
 import Link from "next/link";
 import styles from "./page.module.scss";
 
-// sample intput: 1676435639911
 const formarTimeStamp = (timestamp) => {
     const date = new Date(timestamp);
 
@@ -22,12 +21,15 @@ export default async function Page() {
         email: email
     }).limit(200).toArray();
 
+    console.log(searchHistory);
+
     return (
         <div className={styles.page}>
             <h2> Search History of {name} </h2>
 
-            <div className={styles.history}>
-                {searchHistory.map((item, index) => (
+            {(searchHistory.length > 0)
+                ? (<div className={styles.history}>
+                    {searchHistory.map((item, index) => (
                         <p className={styles.item} key={index}>
                             <span className={styles.item__timestamp}>
                                 {(item.localTimestamp)}
@@ -39,8 +41,11 @@ export default async function Page() {
                                 {item.path}
                             </span>
                         </p>
-                ))}
-            </div>
+                    ))}
+                </div>)
+                : (<p>No Search History found!</p>)
+            }
+
         </div>
     )
 }

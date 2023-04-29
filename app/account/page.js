@@ -5,13 +5,13 @@ import styles from "./page.module.scss";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
-// import skeleton 
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
 
 export default function Page() {
     const { data: session, status } = useSession();
     const router = useRouter();
+
 
     if (status === 'loading') {
         return (
@@ -33,6 +33,10 @@ export default function Page() {
         )
     }
 
+    if (!session) {
+        signIn()
+    }
+
     const UserEmail = session?.user?.email;
     const UserName = session.user.name || session.user.email.split('@')[0];
     const UserImage = session.user?.image;
@@ -48,7 +52,7 @@ export default function Page() {
                     <p className={styles.email}>{UserEmail}</p>
                     <div className={styles.buttons}>
                         <button onClick={() => router.push('/account/search-history')} >View Search History</button>
-                        <button onClick={() => signOut()} className={styles.logout}>Log Out</button>
+                        <button onClick={() => signOut({ callbackUrl: '/' }) } className={styles.logout}>Log Out</button>
                     </div>
                 </div>
             </div>

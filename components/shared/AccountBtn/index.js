@@ -21,10 +21,8 @@ export default function AccountBtn() {
     }
 
     if (session && session.user) {
-        const UserEmail = session?.user?.email;
         const UserName = session.user.name || session.user.email.split('@')[0];
 
-        // redirect to account page on click
         return (
             <div className={styles.accountBtn} onClick={() => router.push('/account')}>
                 <img src={session.user.image} alt="user" />

@@ -1,7 +1,5 @@
 const fetchNewsResults = (q, page) => {
 
-    // return Promise.resolve([]);
-
     return new Promise((resolve, reject) => {
 
         fetch(`https://newsapi.org/v2/everything?q=${q}&page=${page}&apiKey=${process.env.NEWS_API_KEY}`)
@@ -20,8 +18,6 @@ const fetchNewsResults = (q, page) => {
                     cse: item.urlToImage,
                     favicon: `https://www.google.com/s2/favicons?domain=${item.url}&sz=${256}`,
                     formattedUrl: item.url,
-                    // also remove the www. from the url
-                    // displayLink: item.url.replace(/^(?:https?:\/\/)?(?:www\.)?/i, "").split('/')[0],
                     displayLink: item.url.replace(/(^\w+:|^)\/\//, '').split('/')[0],
                 }));
                 resolve(items);
@@ -34,8 +30,6 @@ const fetchNewsResults = (q, page) => {
 }
 
 const fetchAllResults = (q, start) => {
-
-    // return Promise.resolve([]);
 
     return new Promise((resolve, reject) => {
         fetch(`https://www.googleapis.com/customsearch/v1?key=${process.env.GOOGLE_API_KEY}&cx=${process.env.GOOGLE_API_CX}&q=${q}&start=${start}`)

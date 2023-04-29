@@ -6,6 +6,7 @@ import { MongoDBAdapter } from "@next-auth/mongodb-adapter"
 import clientPromise from "@/utils/db"
 
 export const authOptions = {
+  secret: process.env.NEXTAUTH_SECRET,
   providers: [
     GithubProvider({
       clientId: process.env.GITHUB_ID,
@@ -18,7 +19,7 @@ export const authOptions = {
       name: "Email and Password"
     }),
   ],
-  // adapter: MongoDBAdapter(clientPromise),
+  adapter: MongoDBAdapter(clientPromise),
   theme: {
     colorScheme: "dark",
   }

@@ -5,6 +5,20 @@ import Footer from '@/components/shared/Footer'
 import './globals.scss'
 import { ThemeProvider, ThemeContext } from '@/context/ThemeContext';
 
+export const metadata = {
+  title: 'SearchEx',
+  description: 'Effortlessly explore the web',
+  keywords: ['Next.js', 'React', 'JavaScript'],
+  authors: [{ name: 'DevXprite', url: 'https://github.com/devxprite' }],
+  colorScheme: 'dark',
+  alternates: {
+    canonical: '/'
+  },
+  openGraph: {
+    images: '/images/screenshot.png',
+    type: 'website',
+  },
+};
 
 async function getSession(cookies) {
   const response = await fetch(`${process.env.NEXTAUTH_URL}/api/auth/session`, {
