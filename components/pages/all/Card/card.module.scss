@@ -1,7 +1,8 @@
 @import '@/app/mixins';
 
 .card {
-    border: 2px solid var(--border-color);
+    // border: 2px solid var(--border-color);
+    @include gradient-border(var(--gradient-2), 0.5rem, 2px);
     padding: 1rem;
     border-radius: 0.5rem;
     width: 72%;
@@ -11,33 +12,20 @@
     text-align: left;
     box-shadow: var(--box-shadow);
     position: relative;
-
-    &.ai {
-        border: none;
-
-        &::before {
-            content: "";
-            position: absolute;
-            border-radius: 0.5rem;
-
-            inset: 0;
-            padding: 2px;
-            background: linear-gradient(130deg, #027bfd -24.67%, #9f51fb 53.55%);
-            -webkit-mask:
-                linear-gradient(#fff 0 0) content-box,
-                linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
-        }
-    }
+    background: var(--bg);
 
 
     &.skeleton {
         border-color: transparent;
         box-shadow: none;
+
+        &::before {
+            opacity: 0;
+        }
     }
 
     @include mobile {
+        @include gradient-border(var(--gradient-2), 0.5rem, 1px);
         margin-left: 0;
         width: 100%;
         grid-row: 1;
@@ -46,14 +34,18 @@
     }
 
     img {
-        width: 100%;
+        width: 98%;
+        display: block;
+        margin: auto;
         max-height: 15rem;
         border-radius: 0.5rem;
         box-shadow: var(--box-shadow);
     }
 
     .title {
+        margin-top: 0.75rem;
         font-weight: normal;
+        @include gradient-text(var(--gradient-2));
 
         @include mobile {
             font-size: 1.5rem;
@@ -61,7 +53,7 @@
     }
 
     .content {
-        color: var(--secondary-color);
+        color: var(--color-2);
         font-size: 0.9rem;
         margin-top: 1rem;
     }

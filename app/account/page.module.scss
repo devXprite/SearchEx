@@ -7,34 +7,29 @@
 
     .card {
         margin: auto;
-        display: inline-block;
+        // display: inline-block;
         padding: 2rem 1.5rem;
-        background: var(--primary-background);
+        background: var(--bg-1);
         border-radius: 0.5rem;
-        box-shadow: var(--box-shadow);
         font-weight: normal;
         transition: all 0.3s;
-        border: 1px solid rgba(var(--border-color), 0.5);
+        @include gradient-border(var(--gradient-2), 0.5rem, 2px);
 
         @include mobile {
             max-width: 94%;
         }
 
-        &:hover {
-            box-shadow: var(--box-shadow-hover);
-            background: var(--secondary-background);
-            transform: scale(1.01);
-        }
 
         .userImg {
             max-width: 14rem;
             border-radius: 50%;
-            margin-bottom: 0.5rem;
+            margin-bottom: 2.5rem;
             box-shadow: var(--box-shadow);
-            border: 0.2rem solid orange;
+            border: 2px solid var(--border-color);
             transition: all 0.3s;
 
             @include mobile {
+                margin-bottom: 1rem;
                 max-width: 70%;
             }
 
@@ -45,13 +40,14 @@
         }
 
         .name {
+            @include gradient-text(var(--gradient-2));
             font-weight: normal;
             font-size: 2.2rem;
         }
 
         .email {
             font-size: 1.5rem;
-            color: var(--secondary-color);
+            color: var(--color-2);
         }
 
         .buttons {
@@ -65,15 +61,16 @@
                 gap: 1rem;
             }
 
-            button,.btn {
+            button,
+            .btn {
                 // color: var(--color);
                 color: black;
                 font-size: 1.1rem;
                 padding: 0.5rem 1rem;
                 border-radius: 0.3rem;
                 border: 1px solid var(--border-color);
-                // background: var(--background);
-                background: deepskyblue;
+                // background: var(--bg);
+                background: var(--gradient-2);
                 box-shadow: var(--box-shadow);
                 transition: all 0.3s;
                 font-family: 'Ubuntu', sans-serif;
@@ -81,7 +78,7 @@
 
                 &:hover {
                     box-shadow: var(--box-shadow-hover);
-                    // background: var(--primary-background);
+                    // background: var(--bg-1);
                     transform: scale(1.05);
                 }
 
@@ -89,8 +86,8 @@
                     width: 100%;
                 }
 
-                &.logout{
-                    background-color: orangered;
+                &.logout {
+                    background: orangered;
                 }
             }
         }

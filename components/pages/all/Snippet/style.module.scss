@@ -5,7 +5,7 @@
     background: transparent;
     border-radius: 0.5rem;
     transition: all 0.3s ease-in-out;
-    color: var(--primary-color);
+    color: var(--color-1);
     text-align: left;
     padding: 1rem;
     margin: 1rem 0;
@@ -17,7 +17,7 @@
     }
 
     &:hover {
-        background: var(--secondary-background);
+        background: var(--bg-2);
         box-shadow: var(--box-shadow);
         transform: scale(1.01);
     }
@@ -37,7 +37,7 @@
 
         .url {
             width: 100%;
-            color: var(--primary-color);
+            color: var(--color-1);
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
@@ -60,6 +60,7 @@
             font-size: 1.3rem;
             margin-bottom: 0.5rem;
             word-break: break-word;
+            // @include gradient-text(var(--gradient-3));
 
             @include mobile {
                 font-size: 1.15rem;
@@ -68,7 +69,7 @@
 
         .snippet {
             font-size: 0.9rem;
-            color: var(--tertiary-color);
+            color: var(--color-3);
             word-break: break-word;
         }
     }

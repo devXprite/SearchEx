@@ -1,10 +1,46 @@
+@import "@/app/mixins.scss";
+
 .not_found {
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 90vh;
+    font-family: "Raleway", sans-serif;
+    flex-direction: column;
+    gap: 1.25rem;
+    padding: 0 2rem;
 
-    h2{
+    @include mobile {
+        gap: 1rem;
+    padding: 0 0.5rem;
+
+    }
+
+    h2 {
+        @include gradient-text(var(--gradient-1));
+        font-size: 12rem;
+        font-weight: normal;
+
+        @include mobile {
+            font-size: 8rem;
+        }
+
+    }
+
+    h3 {
         font-size: 3rem;
+        font-weight: normal;
+
+        @include mobile {
+            font-size: 1.75rem;
+        }
+    }
+
+    p {
+        font-size: 1.5rem;
+
+        @include mobile {
+            font-size: 1rem;
+        }
     }
 }

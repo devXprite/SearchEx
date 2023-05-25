@@ -1,16 +1,18 @@
 $variables-dark: (
-    background: #161616,
-    primary-background: lighten(#161616, 3%),
-    secondary-background: lighten(#161616, 8%),
+    bg: #161616,
+    bg-1: lighten(#161616, 3%),
+    bg-2: lighten(#161616, 8%),
 
     color: #f7f7f7,
-    primary-color: darken(#f7f7f7, 10%),
-    secondary-color: darken(#f7f7f7, 20%),
-    tertiary-color: darken(#f7f7f7, 30%),
-    border-color: rgba(darken(#f7f7f7, 50%), 0.4),
+    color-1: darken(#f7f7f7, 10%),
+    color-2: darken(#f7f7f7, 20%),
+    color-3: darken(#f7f7f7, 30%),
+    border-color: rgba(darken(#f7f7f7, 50%), 0.5),
     link-color: #4dafff,
 
-    logo-gradient: linear-gradient(110deg, #7b0afd .56%, #00fff0 103%),
+    gradient-1: linear-gradient(to bottom right,#fcda00,#ec3258),
+    gradient-2:  linear-gradient(to bottom right,#00ef86,#008eb9),
+    gradient-3: linear-gradient(to bottom right,#3d00cc,#008cff),
 
     border-radius: 0.5rem,
     box-shadow: 2px 4px 4px rgb(0 0 0 / 25%),
@@ -18,20 +20,17 @@ $variables-dark: (
 );
 
 $variables-light: (
-    background: #fefefe,
-    primary-background: darken(white, 2%),
-    secondary-background: darken(white, 3%),
+    bg: #fefefe,
+    bg-1: darken(white, 2%),
+    bg-2: darken(white, 3%),
 
     color: lighten(#000, 4%),
-    primary-color: lighten(#000, 10%),
-    secondary-color: lighten(#000, 20%),
-    tertiary-color: lighten(#000, 25%),
+    color-1: lighten(#000, 10%),
+    color-2: lighten(#000, 20%),
+    color-3: lighten(#000, 25%),
     border-color: rgba(lighten(#000, 50%), 0.3),
-    link-color: #006ce3,
+    link-color: #006ce3,    
 
-    logo-gradient: linear-gradient(110deg, #7b0afd .56%, #00fff0 103%),
-
-    border-radius: 0.5rem,
     box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.08),
     box-shadow-hover: 2px 6px 14px rgba(0, 0, 0, 0.15)
 );

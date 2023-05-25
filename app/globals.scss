@@ -1,6 +1,7 @@
 @import '@/app/mixins';
 @import '@/app/variables';
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap');
 
 *,
 *::after,
@@ -20,33 +21,35 @@ html{
     }
 
     ::-webkit-scrollbar-track {
-        background: var(--background)
+        background: var(--bg)
     }
 
     ::-webkit-scrollbar-thumb {
-        background: var(--tertiary-color);
+        background: var(--color-3);
         border-radius: 0.5rem;
     }
 
     ::-webkit-scrollbar-thumb:hover {
-        background: var(--secondary-color);
+        background: var(--color-2);
     }
 }
 
 body {
-    background-color: var(--background);
+    background-color: var(--bg);
     color: var(--color);
     text-align: center;
     font-family: 'Ubuntu', sans-serif;
     min-height: 100vh;
     // display: flex;
     // flex-direction: column;
-
-    // remove blue tap highlight on mobile
     -webkit-tap-highlight-color: transparent;    
 
     main{
         // flex: 1;
         min-height: 100vh;
     }
+}
+
+a{
+    color: var(--link-color);
 }

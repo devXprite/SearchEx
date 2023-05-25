@@ -6,6 +6,8 @@ import styles from "./page.module.scss";
 import Card from "@/components/pages/images/Card";
 import CardSkeleton from "@/components/pages/images/CardSkeleton";
 import LoadmoreBtn from "@/components/shared/LoadmoreBtn";
+import axios from "axios";
+import NoResults from "@/components/shared/NoResults";
 
 const Page = (props) => {
 
@@ -18,11 +20,15 @@ const Page = (props) => {
     const [isMoreLoading, setIsMoreLoading] = useState(false);
 
     useEffect(() => {
-        fetch(`/api/search/images?q=${query}&page=${page}`)
-            .then(res => res.json())
-            .then(data => {
-                setResults((results) => [...results, ...data || []]);
-                setLoading(false)
+        axios.get(`/api/search/images?q=${query}&page=${page}`)
+            .then(res => {
+                setResults((results) => [...results, ...res.data || []]);
+            })
+            .catch(err => {
+                console.log(err);
+            })
+            .finally(() => {
+                setLoading(false);
                 setIsMoreLoading(false);
             })
     }, [query, page])
@@ -37,6 +43,10 @@ const Page = (props) => {
                 </div>
             </div>
         )
+    }
+
+    if (results.length === 0) {
+        return (<NoResults query={query} type="Images" />)
     }
 
     return (

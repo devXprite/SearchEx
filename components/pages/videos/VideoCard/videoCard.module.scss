@@ -26,7 +26,7 @@
 
     &:hover {
         box-shadow: var(--box-shadow);
-        background: var(--secondary-background);
+        background: var(--bg-2);
         transform: scale(1.03);
 
         .thumbnail {
@@ -59,7 +59,7 @@
             font-weight: normal;
 
             @include mobile {
-                color: var(--primary-color);
+                color: var(--color-1);
                 font-size: 1rem;
                 border: none;
                 // ellipsis for 2 lines
@@ -72,7 +72,7 @@
 
         .publishedAt {
             margin-top: 0.25rem;
-            color: var(--tertiary-color);
+            color: var(--color-3);
             font-size: 0.9rem;
 
             &::before {

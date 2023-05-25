@@ -1,6 +1,5 @@
 import AccountBtn from '@/components/shared/AccountBtn'
 import SearchBar from '@/components/shared/SearchBar'
-import Image from 'next/image'
 import styles from './page.module.scss'
 
 export default function Home() {

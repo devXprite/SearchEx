@@ -39,7 +39,10 @@ export default async function RootLayout({ children }) {
   return (
     <ThemeProvider>
       <html lang="en" >
-        <head />
+       <head>
+          <meta charSet="UTF-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+       </head>
         <body>
           <main>
             <AuthContext session={session}>

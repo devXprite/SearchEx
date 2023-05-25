@@ -28,14 +28,17 @@ const renderSuggestion = suggestion => (
     </p>
 );
 
-const renderInputComponent = inputProps => (
-    <div className={styles.searchBar__container}>
-        <input {...inputProps} />
-        <button type="submit" className={styles.searchButton}>
-            <FaSearch />
-        </button>
-    </div>
-);
+const renderInputComponent = inputProps => {
+    delete inputProps.key;
+    return (
+        <div className={styles.searchBar__container}>
+            <input {...inputProps} />
+            <button type="submit" className={styles.searchButton}>
+                <FaSearch />
+            </button>
+        </div>
+    );
+}
 
 
 const SearchBar = (props) => {
@@ -44,8 +47,6 @@ const SearchBar = (props) => {
     const pathname = usePathname();
     const searchParams = useSearchParams();
     const inputRef = useRef();
-
-    const query = searchParams.get("q");
 
     const [search, setSearch] = useState(props.value || "");
     const [suggestions, setSuggestions] = useState([]);
@@ -82,7 +83,7 @@ const SearchBar = (props) => {
     const onSuggestionSelected = (e, { suggestion }) => {
         setSearch(suggestion);
         inputRef.current.blur();
-    
+
         if (pathname === "/") {
             router.push(`/search?q=${suggestion}`);
         } else {

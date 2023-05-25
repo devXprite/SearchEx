@@ -8,11 +8,11 @@ html[data-theme="light"] {
 
 .footer {
     box-shadow: rgb(0 0 0 / 40%) 0px -2px 6px;
-    background: var(--primary-background);
+    background: var(--bg-1);
     border-top: 1px solid rgba(var(--border-color), 0.6);
     padding: 1rem 2rem;
     margin-top: 2rem;
-    color: var(--secondary-color);
+    color: var(--color-2);
 
     @include mobile {
         padding: 1rem 0.5rem;
@@ -30,7 +30,7 @@ html[data-theme="light"] {
         }
 
         .logo {
-            background: var(--logo-gradient);
+            background: var(--gradient-1);
             display: inline-block;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;

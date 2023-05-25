@@ -8,6 +8,7 @@ import ResultSkeleton from "@/components/pages/all/SnippetSkeleton";
 import ResultCard from "@/components/pages/all/Card";
 import NoResults from "@/components/shared/NoResults";
 import LoadmoreBtn from "@/components/shared/LoadmoreBtn";
+import axios from "axios";
 
 const searchPage = () => {
     const searchParams = useSearchParams();
@@ -20,13 +21,19 @@ const searchPage = () => {
     const [isMoreLoading, setIsMoreLoading] = useState(false);
 
     useEffect(() => {
-        fetch(`/api/search/?q=${query}&page=${page}`)
-            .then(res => res.json())
-            .then(data => {
-                setResults((results) => [...results, ...data || []]);
+        axios.get(`/api/search/?q=${query}&page=${page}`)
+            .then(res => {
+                setResults((results) => [...results, ...res.data || []]);
+            })
+            .catch(err => {
+                console.log(err);
+                setError(true);
+            })
+            .finally(() => {
                 setLoading(false);
                 setIsMoreLoading(false);
             })
+
     }, [query, page])
 
     useEffect(() => { setResults([]), setLoading(true) }, [query])
@@ -42,18 +49,6 @@ const searchPage = () => {
             </>
         )
     }
-
-    // if (loading) {
-    //     return (
-    //         <>
-    //             <div className={styles.searchPage}>
-    //                 <div className={styles.results__container}>
-    //                     {Array.from(Array(10).keys()).map((i) => <ResultSkeleton key={i} />)}
-    //                 </div>
-    //             </div>
-    //         </>
-    //     )
-    // }
 
     if (!loading && results.length === 0) {
         return (<NoResults query={query} />)

@@ -19,5 +19,7 @@ export default async (req, res) => {
         };
     });
 
+    // const RESULTS = await fetchNewsResults(q, page);
+
     res.status(200).json(articles);
 }

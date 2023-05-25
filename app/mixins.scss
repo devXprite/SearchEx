@@ -3,3 +3,31 @@
         @content;
     }
 }
+
+@mixin gradient-text($gradient) {
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    background: $gradient;
+    background-clip: text;
+    -webkit-background-clip: text;
+    display: inline-block;
+    box-shadow: var(--box-shadow);
+}
+
+@mixin gradient-border($gradient, $radius: 0.5rem, $width: 2px) {
+    position: relative;
+    border-radius: $radius;
+    box-shadow: var(--box-shadow);
+
+
+    &::before {
+        content: "";
+        opacity: 1;
+        position: absolute;
+        inset: $width * -1;
+        pointer-events: none;
+        border-radius: $radius;
+        z-index: -20;
+        background: $gradient;
+    }
+}

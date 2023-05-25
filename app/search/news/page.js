@@ -4,6 +4,7 @@ import CardSkeleton from "@/components/pages/videos/CardSkeleton";
 import VideoCard from "@/components/pages/videos/VideoCard";
 import LoadmoreBtn from "@/components/shared/LoadmoreBtn";
 import NoResults from "@/components/shared/NoResults";
+import axios from "axios";
 import { useSearchParams } from "next/navigation";
 import { useState, useEffect } from "react";
 
@@ -18,10 +19,14 @@ const Page = (props) => {
     const [isMoreLoading, setIsMoreLoading] = useState(false);
 
     useEffect(() => {
-        fetch(`/api/search/news?q=${query}&page=${page}`)
-            .then(res => res.json())
-            .then(data => {
-                setResults((results) => [...results, ...data || []]);
+        axios.get(`/api/search/news?q=${query}&page=${page}`)
+            .then(res => {
+                setResults((results) => [...results, ...res.data || []]);
+            })
+            .catch(err => {
+                console.log(err);
+            })
+            .finally(() => {
                 setLoading(false);
                 setIsMoreLoading(false);
             })

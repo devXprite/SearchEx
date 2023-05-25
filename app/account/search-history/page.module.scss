@@ -8,7 +8,7 @@
 .history{
 
     max-width: 40rem;
-    background-color: var(--secondary-background);
+    background-color: var(--bg-2);
     margin: auto;
     padding: 0.5rem;
     border-radius: 0.5rem;
@@ -27,7 +27,7 @@
         &__path{
             padding-left: 0.5rem;
             font-size: 1rem;
-            color: var(--secondary-color);
+            color: var(--color-2);
         }
     }
 }

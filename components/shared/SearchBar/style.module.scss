@@ -74,7 +74,7 @@
             svg {
                 width: 3rem;
                 height: 1.25rem;
-                fill: var(--tertiary-color);
+                fill: var(--color-3);
 
                 @include mobile {
                     width: 2.8rem;
@@ -85,7 +85,7 @@
     }
 
     .suggestionsContainer {
-        background: var(--primary-background);
+        background: var(--bg-1);
         max-height: 14rem;
         overflow: hidden scroll;
         position: absolute;
@@ -110,7 +110,7 @@
             padding: 0.5rem 1rem;
             text-align: left;
             cursor: pointer;
-            color: var(--secondary-color);
+            color: var(--color-2);
 
             @include mobile {
                 font-size: 1rem;
@@ -118,7 +118,7 @@
 
             .searchIcon {
                 font-size: 1rem;
-                fill: var(--tertiary-color);
+                fill: var(--color-3);
                 margin-right: 0.5rem;
             }
         }
