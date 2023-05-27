@@ -10,9 +10,9 @@ $variables-dark: (
     border-color: rgba(darken(#f7f7f7, 50%), 0.5),
     link-color: #4dafff,
 
-    gradient-1: linear-gradient(to bottom right,#fcda00,#ec3258),
-    gradient-2:  linear-gradient(to bottom right,#00ef86,#008eb9),
-    gradient-3: linear-gradient(to bottom right,#3d00cc,#008cff),
+    // gradient-1: linear-gradient(to bottom right,#fcda00,#ec3258),
+    gradient-1:linear-gradient(to bottom right, #7b0afd 15%, #00fff0),
+    gradient-2: linear-gradient(to bottom right, #00ef86, #008eb9),
 
     border-radius: 0.5rem,
     box-shadow: 2px 4px 4px rgb(0 0 0 / 25%),
@@ -29,7 +29,7 @@ $variables-light: (
     color-2: lighten(#000, 20%),
     color-3: lighten(#000, 25%),
     border-color: rgba(lighten(#000, 50%), 0.3),
-    link-color: #006ce3,    
+    link-color: #006ce3,
 
     box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.08),
     box-shadow-hover: 2px 6px 14px rgba(0, 0, 0, 0.15)
@@ -43,9 +43,8 @@ $variables-light: (
     }
 }
 
-html[data-theme="light"] ,
-body[data-theme="light"]
-{
+html[data-theme="light"],
+body[data-theme="light"] {
 
     @each $key,
     $value in $variables-light {

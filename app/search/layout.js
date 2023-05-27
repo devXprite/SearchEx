@@ -60,7 +60,7 @@ export default function SearchLayout({ children }) {
             <div className={styles.search__layout}>
                 <div className={styles.header}>
                     <div className={styles.container__logo}>
-                    <Link href={'/'}><span className={styles.logo}>SearchEx</span> </Link>
+                        <Link href={'/'}><span className={styles.logo}>SearchEx</span> </Link>
                     </div>
                     <div className={styles.container__search}>
                         <div className={styles.search}>
@@ -68,14 +68,17 @@ export default function SearchLayout({ children }) {
                         </div>
                         <div className={styles.menu}>
                             {pages.map(page => (
-                                <Link href={page.url + query} key={page.title} className={page.pathRegex.test(usePathname()) ? styles.active : ""}>
+                                <Link
+                                    key={page.title}
+                                    prefetch={true}
+                                    href={page.url + query}
+                                    className={page.pathRegex.test(usePathname()) ? styles.active : ""}>
                                     <span>{page.icon}</span><span>{page.title}</span>
                                 </Link>
                             ))}
                         </div>
                     </div>
                     <div className={styles.container__account}>
-                        {/* <BsPerson className={styles.account} /> */}
                         <AccountBtn />
                     </div>
                 </div>

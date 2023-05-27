@@ -1,13 +1,10 @@
-"use client";
-
 import styles from "./style.module.scss"
-import { useRouter } from "next/navigation"
 
 const ResultsSnippet = ({ results }) => {
-    const { title, displayLink, formattedUrl, snippet, favicon, cse } = results;
+    const { title,link, displayLink, snippet, favicon, thumbnail } = results;
 
     return (
-        <div className={styles.resultsSnippet} onClick={() => { window.location.href = formattedUrl }}>
+        <a className={styles.resultsSnippet} href={link}>
             <div className={styles.head}>
                 <img src={favicon} alt="favicon" className={styles.favicon} />
                 <p className={styles.url}>{displayLink}</p>
@@ -17,9 +14,9 @@ const ResultsSnippet = ({ results }) => {
                     <h2 className={styles.title}>{title}</h2>
                     <p className={styles.snippet}>{snippet}</p>
                 </div>
-                {cse && <img src={cse} alt="cse" className={styles.cse} />}
+                {thumbnail && <img src={thumbnail} alt="thumbnail" className={styles.cse} />}
             </div>
-        </div>
+        </a>
     )
 }
 

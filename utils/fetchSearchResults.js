@@ -16,10 +16,10 @@ const fetchSearchResults = (q, start) => {
 
                 const items = responseItems.map((item, i) => ({
                     title: item.title,
+                    link: item.formattedUrl,
                     displayLink: item.displayLink,
-                    formattedUrl: item.formattedUrl,
                     snippet: item.snippet,
-                    cse: (i == 0 && item.pagemap?.cse_thumbnail?.[0]?.src || null),
+                    thumbnail: (i == 0 && item.pagemap?.cse_thumbnail?.[0]?.src || null),
                     favicon: `https://www.google.com/s2/favicons?domain=${item.link}&sz=${256}`
                 }));
                 resolve(items);

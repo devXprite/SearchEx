@@ -18,11 +18,11 @@ const fetchVideosResults = (q, page, max = 60) => {
                     .slice((page - 1) * max, (page - 1) * max + max)
                     .map((item, i) => ({
                         title: item.snippet.title,
+                        link: `https://www.youtube.com/watch?v=${item.id.videoId}`,
                         displayLink: "youtube.com",
-                        formattedUrl: `https://www.youtube.com/watch?v=${item.id.videoId}`,
                         snippet: item.snippet.description,
-                        cse: item.snippet.thumbnails.high.url,
-                        favicon: `https://www.google.com/s2/favicons?domain=https://www.youtube.com&sz=${256}`
+                        thumbnail: item.snippet.thumbnails.medium.url,
+                        favicon: `https://www.google.com/s2/favicons?domain=https://www.youtube.com&sz=${256}`,
                     }));
                 resolve(items);
             })

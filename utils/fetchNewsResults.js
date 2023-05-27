@@ -17,11 +17,11 @@ const fetchNewsResults = (q, page, max = 60) => {
                     responseItems.slice(0, max)
                         .map((item, i) => ({
                             title: item.title.length > 70 ? item.title.substring(0, 70) + "..." : item.title,
-                            snippet: item.content.length > 150 ? item.content.substring(0, 150) + "..." : item.description,
-                            cse: item.urlToImage,
-                            favicon: `https://www.google.com/s2/favicons?domain=${item.url}&sz=${256}`,
-                            formattedUrl: item.url,
+                            link: item.url,
                             displayLink: item.url.replace(/(^\w+:|^)\/\//, '').split('/')[0],
+                            snippet: item.content.length > 150 ? item.content.substring(0, 150) + "..." : item.description,
+                            thumbnail: item.urlToImage,
+                            favicon: `https://www.google.com/s2/favicons?domain=${item.url}&sz=${256}`,
                         }));
                 resolve(items);
             })

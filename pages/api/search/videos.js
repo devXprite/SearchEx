@@ -29,6 +29,7 @@ export default async (req, res) => {
             thumbnail: item.snippet.thumbnails.medium.url,
             publishedBy: item.snippet.channelTitle,
             publishedAt: item.snippet.publishedAt,
+            link: `https://www.youtube.com/watch?v=${item.id.videoId}`,
         };
     });
 

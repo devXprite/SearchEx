@@ -4,7 +4,6 @@ if (!process.env.MONGODB_HOST) {
     throw new Error('Invalid/Missing environment variable: "MONGODB_HOST"')
 }
 
-
 const db_user = process.env.MONGODB_USERNAME;
 const db_pass = process.env.MONGODB_PASSWORD;
 const db_name = process.env.MONGODB_DB;

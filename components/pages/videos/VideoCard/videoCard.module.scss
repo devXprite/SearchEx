@@ -10,6 +10,7 @@
     padding: 0.25rem;
     transition: all 0.3s;
     cursor: pointer;
+    color: var(--color-1);
 
     @include mobile {
         grid-template-columns: 2fr 3fr;

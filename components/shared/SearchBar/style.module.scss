@@ -1,19 +1,15 @@
 @import '@/app/mixins';
 
 .searchBar {
-    width: 100%;
-    max-width: 46rem;
-    border: 1px solid var(--border-color);
+    width: 95%;
+    margin: 0 auto;
+    max-width: 50rem;
+    position: relative;
     border-radius: 5rem;
     background: transparent;
-    transition: all 0s;
-    margin: 0 auto;
+    border: 2px solid rgba(#808080, 0.65);
     box-shadow: var(--box-shadow);
-    position: relative;
-
-    @include mobile {
-        max-width: 95%;
-    }
+    transition: all 0.3s;
 
     &:focus-within {
         $border-color: #4dafff;
@@ -34,6 +30,10 @@
 
     &__open:focus-within {
         border-radius: 1rem 1rem 0 0;
+
+        button{
+            border-radius:  0.125rem 0.75rem 0.125rem 0.125rem;
+        }
     }
 
     &__container {
@@ -43,14 +43,14 @@
 
         input {
             width: 100%;
-            font-size: 1.3rem;
+            font-size: 1.5rem;
             color: var(--color);
             padding: 0.65rem 0.65rem .65rem 2rem;
             background: transparent;
             border: none;
 
             @include mobile {
-                font-size: 1.1rem;
+                font-size: 1.25rem;
                 padding: 0.5rem 0.5rem .5rem 1.5rem;
             }
 

@@ -1,5 +1,3 @@
-"use client";
-
 import styles from "./videoCard.module.scss";
 
 const formatTimeStamp = (timeStamp) => {
@@ -19,10 +17,10 @@ const formatTimeStamp = (timeStamp) => {
 
 
 const VideoCard = ({ results }) => {
-    const { title, description, thumbnail, publishedBy, publishedAt } = results;
+    const { title, description, thumbnail, publishedBy, publishedAt, link } = results;
 
     return (
-        <div className={styles.videoCard} onClick={() => { window.location.href = `https://www.youtube.com/watch?v=${results.id}` }}>
+        <a className={styles.videoCard} href={link}>
             <img className={styles.thumbnail} src={thumbnail} alt="thumbnail" />
             <div className={styles.content}>
                 <h2 className={styles.title}>{title}</h2>
@@ -30,7 +28,7 @@ const VideoCard = ({ results }) => {
                 <p className={styles.publishedBy}>Published by {publishedBy}</p>
                 <p className={styles.description}>{description.substring(0, 600)}</p>
             </div>
-        </div>
+        </a>
     )
 };
 
