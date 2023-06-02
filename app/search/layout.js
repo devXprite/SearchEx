@@ -2,13 +2,12 @@
 
 import styles from './layout.module.scss'
 import SearchBar from "@/components/shared/SearchBar";
-import { BsPerson } from 'react-icons/bs'
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 
 import { BsSearch, BsImage, BsNewspaper } from 'react-icons/bs';
 import { BsFillCameraVideoFill } from 'react-icons/bs';
-import { BsBook, BsMap } from 'react-icons/bs';
+import { BsMap } from 'react-icons/bs';
 import { Suspense } from 'react';
 import AccountBtn from '@/components/shared/AccountBtn';
 
@@ -47,12 +46,6 @@ export default function SearchLayout({ children }) {
             icon: <BsMap />,
             pathRegex: /^\/search\/maps/
         },
-        // {
-        //     title: 'Books',
-        //     url: '/search/books?q=',
-        //     icon: <BsBook />,
-        //     pathRegex: /^\/search\/books/
-        // },
     ]
 
     return (
@@ -60,7 +53,10 @@ export default function SearchLayout({ children }) {
             <div className={styles.search__layout}>
                 <div className={styles.header}>
                     <div className={styles.container__logo}>
-                        <Link href={'/'}><span className={styles.logo}>SearchEx</span> </Link>
+                        <Link href={'/'}>
+                            <span className={styles.logo}>SearchEx</span> 
+                            {/* <img className={styles.logo} src="/logo.png" alt="" /> */}
+                            </Link>
                     </div>
                     <div className={styles.container__search}>
                         <div className={styles.search}>

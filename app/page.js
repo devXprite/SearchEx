@@ -8,8 +8,9 @@ export default function Home() {
       <div className={styles.accountBtn_container}>
         <AccountBtn />
       </div>
-      <h1 className={styles.logo}>SearchEx</h1>
-      <p className={styles.tagline}>Effortlessly explore the web</p>
+      {/* <h1 className={styles.logo}>SearchEx</h1> */}
+      <img src="/logo.png" className={styles.logo} alt="" />
+      <p className={styles.tagline}>Effortlessly explore the Web</p>
       <SearchBar />
     </>
   )

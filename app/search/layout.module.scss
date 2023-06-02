@@ -33,6 +33,7 @@
             gap: 0.25rem;
             transition: all 0.3s;
 
+
             @include mobile {
                 flex-direction: column;
                 gap: unset;
@@ -63,6 +64,7 @@
             margin-top: 0.75rem;
             font-size: 1.5rem;
             transition: all 0.3s;
+            // width: 90%;
 
             &:hover{
                 transform: scale(1.1);

@@ -1,9 +1,8 @@
-import { Session } from 'next-auth'
 import { headers } from 'next/headers'
 import AuthContext from '@/context/AuthContext';
 import Footer from '@/components/shared/Footer'
 import './globals.scss'
-import { ThemeProvider, ThemeContext } from '@/context/ThemeContext';
+import { ThemeProvider } from '@/context/ThemeContext';
 
 export const metadata = {
   title: 'SearchEx',
@@ -11,6 +10,7 @@ export const metadata = {
   keywords: ['Next.js', 'React', 'JavaScript'],
   authors: [{ name: 'DevXprite', url: 'https://github.com/devxprite' }],
   colorScheme: 'dark',
+  favicon: '/favicon.png',
   alternates: {
     canonical: '/'
   },
