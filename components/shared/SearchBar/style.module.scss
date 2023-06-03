@@ -3,13 +3,14 @@
 .searchBar {
     width: 95%;
     margin: 0 auto;
-    max-width: 50rem;
+    max-width: 45rem;
     position: relative;
     border-radius: 5rem;
     background: transparent;
     border: 2px solid rgba(#808080, 0.65);
     box-shadow: var(--box-shadow);
     transition: all 0.3s;
+    background: var(--bg-1);
 
     &:focus-within {
         $border-color: #4dafff;
