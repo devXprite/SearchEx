@@ -1,5 +1,9 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-SearchEx is a search engine clone built with Next.js 13 (beta dir). It utilizes Google Custom Search API and other APIs to provide users with search results. Users can log in and log out using Next-Auth for authentication.
+
+<div align="center">
+    <img src="./public/logo.png" alt="SearchEx Logo" width="250" align="center">
+    <p>SearchEx is a working search engine clone built using Next.js 13</p>
+</div>
+
 
 ## Features
 * Clean UI
@@ -8,7 +12,7 @@ SearchEx is a search engine clone built with Next.js 13 (beta dir). It utilizes 
 * Sign up, log in, and log out
 * Support for multiple authentication providers (e.g. Google, GitHub)
 * Pagination system at the bottom of the search page
-* Open AI for Card
+* Open AI integration for generating text.
 * Light & dark Theme
 
 ## Getting Started
@@ -68,10 +72,3 @@ The `pages/api` directory is mapped to `/api/*`. Files in this directory are tre
 
 ## License
 This project is licensed under the MIT License.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
