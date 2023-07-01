@@ -1,3 +1,5 @@
+"use client";
+
 import { BsMoon, BsSun } from "react-icons/bs";
 import styles from "./themeBtn.module.scss";
 import { ThemeContext } from "@/context/ThemeContext";

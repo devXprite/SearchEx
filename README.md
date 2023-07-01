@@ -1,7 +1,7 @@
 
 <div align="center">
     <img src="./public/logo.png" alt="SearchEx Logo" width="250" align="center">
-    <p>SearchEx is a working search engine clone built using Next.js 13</p>
+    <!-- <p>A working search engine clone built using Next.js 13</p> -->
 </div>
 
 

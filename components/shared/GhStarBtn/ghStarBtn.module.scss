@@ -1,0 +1,25 @@
+.ghStarBtn {
+    color: var(--color-2) !important;
+    border: 1px solid var(--border-color);
+    border-radius: 0.3rem;
+    box-shadow: var(--box-shadow);
+    background: var(--bg);
+    cursor: pointer;
+    transition: all 0.3s;
+    overflow: hidden;
+    display: flex;
+
+    &:hover {
+        transform: scale(1.03);
+    }
+
+    &>span {
+        padding: 0.3rem 0.8rem;
+
+    }
+
+    &>span:nth-child(2) {
+        background-color: var(--bg-2);
+    }
+
+}

@@ -1,14 +1,7 @@
 import { getServerSession } from "next-auth"
 import mongoClient from "@/utils/db"
-import Link from "next/link";
 import styles from "./page.module.scss";
 import { authOptions } from '@/pages/api/auth/[...nextauth]'
-
-const formarTimeStamp = (timestamp) => {
-    const date = new Date(timestamp);
-
-    return date;
-}
 
 export default async function Page() {
 
@@ -50,24 +43,6 @@ export default async function Page() {
                             </p>
                         ))}
                     </div>
-                    // <table>
-                    //     <thead>
-                    //         <tr>
-                    //             <th>Timestamp</th>
-                    //             <th>Query</th>
-                    //             <th>Path</th>
-                    //         </tr>
-                    //     </thead>
-                    //     <tbody>
-                    //         {searchHistory.map((item, index) => (
-                    //             <tr key={index}>
-                    //                 <td>{formarTimeStamp(item.localTimestamp).toLocaleString()}</td>
-                    //                 <td>{item.query}</td>
-                    //                 <td>{item.path}</td>
-                    //             </tr>
-                    //         ))}
-                    //     </tbody>
-                    // </table>
                 )
                 : (<p>No Search History found!</p>)
             }

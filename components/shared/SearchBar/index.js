@@ -12,8 +12,8 @@ const fetchSuggestions = async (search, signal) => {
     const res = await fetch(`https://auto-suggest-queries.p.rapidapi.com/suggestqueries?query=${search}`, {
         "method": "GET",
         "headers": {
-            "X-RapidAPI-Key": "f5e19d4c9emsh03eea66f6e3de51p132ee2jsn33a0e19fc0a9",
-            "X-RapidAPI-Host": "auto-suggest-queries.p.rapidapi.com"
+            "X-RapidAPI-Key": process.env.NEXT_PUBLIC_RAPID_API_KEY,
+            "X-RapidAPI-Host": process.env.NEXT_PUBLIC_RAPID_API_HOST
         },
         signal
     });
