@@ -1,19 +1,23 @@
-
 <div align="center">
     <img src="./public/logo.png" alt="SearchEx Logo" width="250" align="center">
     <!-- <p>A working search engine clone built using Next.js 13</p> -->
 </div>
 
+## About The Project
+SearchEx is a search engine clone developed using NextJs, providing a powerful and intuitive search experience. It allows users to search for web pages, images, news, and videos.
 
-## Features
-* Clean UI
-* Search for web pages, images, news, and videos
-* View search history and saved searches
-* Sign up, log in, and log out
-* Support for multiple authentication providers (e.g. Google, GitHub)
-* Pagination system at the bottom of the search page
-* Open AI integration for generating text.
-* Light & dark Theme
+### Features
+* Features
+* Clean and user-friendly UI
+* Comprehensive search capabilities
+* Intelligent auto-suggestions
+* Search history page
+* Profile management
+* User authentication with GitHub and auth0
+* Pagination system for search results
+* OpenAI integration for enhanced search intelligence
+* Light & dark theme options
+* Fully responsive design
 
 ## Getting Started
 
@@ -64,10 +68,10 @@ The website auto-updates as you edit the file.
 The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
 ## Screenshots
-![Alt text](./public/images/home.png)
-![Alt text](./public/images/page_1.png)
-![Alt text](./public/images/page_2.png)
-![Alt text](./public/images/page_3.png)
+![Screenshot 1](./public/images/home.png)
+![Screenshot 2](./public/images/page_1.png)
+![Screenshot 3](./public/images/page_2.png)
+![Screenshot 4](./public/images/page_3.png)
 
 
 ## License
